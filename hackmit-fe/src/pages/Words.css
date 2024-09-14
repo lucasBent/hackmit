@@ -7,25 +7,38 @@
     height: 100%;
   }
   
-  .word-card {
-    margin: 10px;
-    width: 90%; 
-    transition: transform 0.3s, z-index 0.3s;
+  .word-of-the-day-card {
+    margin-bottom: 20px; 
   }
   
+  .word-of-the-day {
+    
+    --background: var(--ion-color-color9); 
+    font-size: 22px; 
+    height: 110px !important;
+    
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  }
   
   .word-button {
     --background: var(--ion-color-color8);
     width: 100%;
-    height: 100px;
+
+    height: 90px;
     border-radius: 15px; 
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
     font-size: 18px; 
   }
   
+  .word-card {
+    
+    width: 90%; 
+
+    transition: transform 0.3s, z-index 0.3s;
+  }
+
   .ion-searchbar {
     --padding-start: 10px; 
     --padding-end: 100px; 
   }
-  
   

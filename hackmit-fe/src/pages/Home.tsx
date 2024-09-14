@@ -44,7 +44,7 @@ const Home: React.FC = () => {
         <IonTitle style = {{textAlign: 'center', fontSize: '16px', marginBottom: '30px'}}>{getRandomMessage()}</IonTitle>
         <div className="button-container">
           <IonButton expand="block" className="small-button" style = {{height: '125px', marginBottom: '20px'}} routerLink='/words'>Learn</IonButton>
-          <IonButton expand="block" className="small-button" style = {{height: '250px', marginBottom: '20px'}}>Word of the Day</IonButton>
+          <IonButton expand="block" className="small-button" style = {{height: '250px', marginBottom: '20px'}} routerLink='/wordofday'>Word of the Day</IonButton>
           <IonButton expand="block" className="small-button" style = {{height: '125px', marginBottom: '20px'}}>Pronounce</IonButton>
         </div>
       </IonContent>

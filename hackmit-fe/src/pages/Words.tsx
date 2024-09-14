@@ -29,6 +29,8 @@ const Words: React.FC = () => {
     "var(--ion-color-color9)", 
   ];
 
+  const wordOfTheDay = "Technology";
+
   const filteredWords = words.filter(word => word.toLowerCase().includes(searchText.toLowerCase()));
 
   const containerRef = useRef<HTMLDivElement>(null);
@@ -40,18 +42,18 @@ const Words: React.FC = () => {
       const cards = container?.getElementsByClassName('word-card');
       if (cards) {
         const containerHeight = container!.offsetHeight;
-        const middle = containerHeight / 2;
+        const middle = containerHeight * 2 / 3;
 
         for (let i = 0; i < cards.length; i++) {
           const card = cards[i] as HTMLElement;
           const rect = card.getBoundingClientRect();
           const distanceToMiddle = Math.abs(rect.top + rect.height / 2 - middle);
 
-          const scale = Math.max(0.85, 1 - distanceToMiddle / middle); // Reduce size further from center
-          const zIndex = 10 - distanceToMiddle / middle; // Focus the centered card by raising its z-index
+          const scale = Math.max(0.85, 1 - distanceToMiddle / middle); 
+          const zIndex = 10 - distanceToMiddle / middle; 
 
-          card.style.transform = `scale(${scale})`; // Scale the card
-          card.style.zIndex = `${Math.round(zIndex)}`; // Adjust the z-index
+          card.style.transform = `scale(${scale})`; 
+          card.style.zIndex = `${Math.round(zIndex)}`; 
         }
       }
     };
@@ -91,6 +93,12 @@ const Words: React.FC = () => {
           debounce={300} 
         />
 
+        <div className="word-of-the-day-card">
+          <IonButton className="word-of-the-day word-button " expand="block">
+            {"Word of the Day: " + wordOfTheDay}
+          </IonButton>
+        </div>
+
         <div className="scrollable-vertical" ref={containerRef}>
           {filteredWords.map((word, index) => (
             <div key={index} className="word-card">
@@ -110,3 +118,6 @@ const Words: React.FC = () => {
 };
 
 export default Words;
+
+
+
