@@ -1,0 +1,21 @@
+build_commands: []
+environment_variables: {}
+external_package_dirs: []
+model_metadata: {}
+model_name: IPA model
+python_version: py311
+
+requirements:
+  - accelerate==0.30.1
+  - einops==0.8.0
+  - transformers==4.41.2
+  - torch==2.3.0
+  - librosa
+  - soundfile
+
+resources:
+  accelerator: T4
+  use_gpu: true
+
+secrets: {}
+system_packages: []
