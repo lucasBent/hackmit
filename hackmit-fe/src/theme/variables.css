@@ -1,7 +1,11 @@
 :root {
-    --ion-background-color: #e1e1e1;
-}
-
-ion-app {
-    background-color: var(--ion-background-color);
-}
+    --color1: #4D8373;
+    --color2: #BFC9BD;
+    --color3: #D9E1EB;
+    --color4: #C2C8F8;
+    --color5: #EEECE7;
+    --color6: #F7F7F7;
+    --color7: #030303;
+    --color8: #F3958B;
+    --color9: #F5835C;
+  }
