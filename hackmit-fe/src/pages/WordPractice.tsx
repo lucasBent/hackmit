@@ -48,7 +48,10 @@ const WordPractice: React.FC = () => {
         } else {
             setRecording(false)
             const getRecording = await VoiceRecorder.stopRecording()
-            const response = await backend.doPost('transcribe', { recording: getRecording.value.recordDataBase64 })
+            console.log(getRecording.value.mimeType)
+            const response = await backend.doPost('transcribe', {
+                recording: getRecording.value.recordDataBase64,
+            })
             console.log(response)
         }
     }
