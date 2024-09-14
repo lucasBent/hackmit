@@ -5,6 +5,7 @@
 /.pnp
 .pnp.js
 bun.lockb
+current.mp3
 
 # testing
 /coverage

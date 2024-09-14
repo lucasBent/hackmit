@@ -10,9 +10,9 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "bun_python": "^0.1.4",
     "convex": "^1.16.0",
     "cors": "^2.8.5",
-    "bun_python": "^0.1.4",
     "express": "^4.21.0"
   },
   "devDependencies": {
