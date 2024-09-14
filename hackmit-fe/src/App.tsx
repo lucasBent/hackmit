@@ -3,6 +3,8 @@ import { IonApp, IonRouterOutlet, setupIonicReact } from '@ionic/react'
 import { IonReactRouter } from '@ionic/react-router'
 import Home from './pages/Home'
 import WordPractice from './pages/WordPractice'
+import Words from './pages/Words'
+//import Grid from './pages/grid'
 
 /* Core CSS required for Ionic components to work properly */
 import '@ionic/react/css/core.css'
@@ -47,6 +49,10 @@ const App: React.FC = () => (
                     <Route exact path='/home'>
                         <Home />
                     </Route>
+                    <Route exact path='/words'>
+                        <Words />
+                    </Route>
+                  
                     <Route exact path='/word-practice/:word'>
                         <WordPractice />
                     </Route>
