@@ -1,6 +1,3 @@
-/* For information on how to create your own theme, please see:
-http://ionicframework.com/docs/theming/ */
-
 :root {
     --color1: #4D8373;
     --color2: #BFC9BD;
@@ -11,4 +8,4 @@ http://ionicframework.com/docs/theming/ */
     --color7: #030303;
     --color8: #F3958B;
     --color9: #F5835C;
-  }
+}
