@@ -14,8 +14,8 @@ app.listen(port, () => {
 })
 
 app.get('/', async (req, res) => {
-    // const thing = pipe('./sample3.m4a')
+    const thing = await pipe(`${__dirname}/sample3.m4a`)
     res.status(200).send({
-        message: `${__dirname}`,
+        message: `${thing}`,
     })
 })
