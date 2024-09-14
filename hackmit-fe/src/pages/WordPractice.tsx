@@ -21,7 +21,7 @@ const WordPractice: React.FC = () => {
 
     function sanitizeData(wordData: Word[]) {
         return uniquifyTranscriptions(wordData).map((entry) => {
-            entry.ipa = entry.ipa.replaceAll(' ', '')
+            entry.ipa = cleanTranscription(entry.ipa)
             return entry
         })
 
@@ -33,6 +33,12 @@ const WordPractice: React.FC = () => {
             })
         }
     }
+
+    function cleanTranscription(transcription: string) {
+        transcription = transcription.replaceAll(' ', '').replaceAll('ˈ', '')
+        return transcription
+    }
+
     let sanitizedData: Word[] = []
     if (wordData) sanitizedData = sanitizeData(wordData)
 
@@ -40,6 +46,7 @@ const WordPractice: React.FC = () => {
     const [wordIsUsed, toggleWordIsUsed] = useState(false)
     const [canRecord, setCanRecord] = useState(false)
     const [recording, setRecording] = useState(false)
+    const [attemptTranscription, setAttemptTranscription] = useState('')
 
     async function recordButtonPressed() {
         if (!recording) {
@@ -47,9 +54,13 @@ const WordPractice: React.FC = () => {
             const tryRecording = await VoiceRecorder.startRecording()
         } else {
             setRecording(false)
+            setAttemptTranscription('')
             const getRecording = await VoiceRecorder.stopRecording()
-            const response = await backend.doPost('transcribe', { recording: getRecording.value.recordDataBase64 })
-            console.log(response)
+            const response = await backend.doPost('transcribe', {
+                recording: getRecording.value.recordDataBase64,
+            })
+            const transcriptionFromUser = JSON.parse(response?.data?.message.replaceAll(`'`, `"`))?.text
+            setAttemptTranscription(cleanTranscription(transcriptionFromUser))
         }
     }
 
@@ -91,6 +102,11 @@ const WordPractice: React.FC = () => {
                                     {sanitizedData.map(({ _id, ipa }: Word) => (
                                         <div key={_id}>/{ipa}/</div>
                                     ))}
+                                    {attemptTranscription ? (
+                                        <div key='attempt'>/{attemptTranscription}/</div>
+                                    ) : (
+                                        <IonSpinner />
+                                    )}
                                 </h2>
                             ) : (
                                 <IonSpinner />
