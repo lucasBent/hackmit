@@ -1,7 +1,6 @@
 {
   "name": "hackmit-be",
   "version": "1.0.0",
-  "type": "module",
   "description": "",
   "main": "index.js",
   "scripts": {
@@ -11,11 +10,15 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "bun_python": "^0.1.4",
+    "convex": "^1.16.0",
     "cors": "^2.8.5",
+    "bun_python": "^0.1.4",
     "express": "^4.21.0"
   },
   "devDependencies": {
-    "@types/node": "^22.5.5"
+    "@types/bun": "latest"
+  },
+  "peerDependencies": {
+    "typescript": "^5.0.0"
   }
 }
