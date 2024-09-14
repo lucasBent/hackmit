@@ -1,5 +1,7 @@
 {
   "name": "hackmit-fe",
-  "integrations": {},
+  "integrations": {
+    "capacitor": {}
+  },
   "type": "react-vite"
 }

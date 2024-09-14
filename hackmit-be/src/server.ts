@@ -8,12 +8,22 @@ const pipe = transformers.pipeline('automatic-speech-recognition', 'ginic/wav2ve
 const app = express()
 const port = 3000
 app.use(cors())
+app.use(express.json())
 
 app.listen(port, () => {
     return console.log(`Express is listening at http://localhost:${port}`)
 })
 
 app.get('/', async (req, res) => {
+    const thing = await pipe(`${__dirname}/sample3.m4a`)
+    res.status(200).send({
+        message: `${thing}`,
+    })
+})
+
+app.post('/transcribe', async (req, res) => {
+    console.log(req.body.recording)
+    const recording = new Audio(req.body.recording)
     const thing = await pipe(`${__dirname}/sample3.m4a`)
     res.status(200).send({
         message: `${thing}`,

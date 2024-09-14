@@ -47,7 +47,7 @@ const App: React.FC = () => (
                     <Route exact path='/home'>
                         <Home />
                     </Route>
-                    <Route exact path='/word-practice'>
+                    <Route exact path='/word-practice/:word'>
                         <WordPractice />
                     </Route>
                     <Route exact path='/'>
