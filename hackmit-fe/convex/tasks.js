@@ -21,3 +21,18 @@ export const getWord = query({
         return results
     },
 })
+
+export const searchWords = query({
+    args: {
+        query: v.string(),
+    },
+    handler: async (ctx, args) => {
+        const results = await ctx.db
+            .query('words')
+            .withSearchIndex('search_word', (q) => q.search('word', args.query))
+            .take(100)
+
+        const filterResults = results.filter((doc) => doc.word.startsWith(args.query) || doc.word === args.query)
+        return filterResults
+    },
+})
