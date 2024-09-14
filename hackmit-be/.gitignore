@@ -4,6 +4,7 @@
 /node_modules
 /.pnp
 .pnp.js
+bun.lockb
 
 # testing
 /coverage
@@ -29,5 +30,4 @@ yarn-error.log*
 
 # Optional eslint cache
 .eslintcache
-
 .env.local
