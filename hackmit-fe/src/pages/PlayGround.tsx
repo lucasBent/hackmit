@@ -83,12 +83,10 @@ const PlayGround: React.FC = () => {
                 <Toolbar />
             </IonHeader>
             <IonContent fullscreen className='ion-padding' scrollY={false}>
-            <IonTitle className='page-title'>Word Soup</IonTitle>
-                <IonTitle className='page-subtitle' style = {{fontSize: "18px"}}>Search for words to practice!</IonTitle>
-
-
-
-            
+                <IonTitle className='page-title'>Word Soup</IonTitle>
+                <IonTitle className='page-subtitle' style={{ fontSize: '18px' }}>
+                    Search for words to practice!
+                </IonTitle>
 
                 <IonSearchbar
                     className='searchbar'
@@ -97,7 +95,7 @@ const PlayGround: React.FC = () => {
                     debounce={300}
                 />
 
-{searchText && (
+                {searchText && (
                     <div className='search-results-row' ref={containerRef}>
                         {displayedWords.map((word: any, index: any) => (
                             <div key={index} className='small-word-card' onClick={() => handleAddWord(word)}>
@@ -107,20 +105,19 @@ const PlayGround: React.FC = () => {
                     </div>
                 )}
 
-             
                 {selectedWords.length > 0 && (
                     <div className='practice-now-container'>
-                        <IonButton className='practice-button' expand='full' onClick={generatePhrase}>
+                        <IonButton className='practice-button big-practice' expand='full' onClick={generatePhrase}>
                             Practice Now
                         </IonButton>
                     </div>
                 )}
 
-<div className = 'image-container'>
-                <img src='src/assets/soup.webp' className='soup-image' />
+                <div className='image-container'>
+                    <img src='src/assets/soup.png' className='soup-image' />
                 </div>
 
-{selectedWords.length > 0 && (
+                {selectedWords.length > 0 && (
                     <div className='selected-words'>
                         <IonTitle className='selected-words-title'>Selected Words:</IonTitle>
                         <ul className='no-bullets'>
@@ -141,9 +138,7 @@ const PlayGround: React.FC = () => {
                         </ul>
                     </div>
                 )}
-               
 
-              
                 {selectedWords.length === 0 && searchText.length === 0 && (
                     <div className='soup-hint'>Start typing to find inspo words for a new sentence ☝️</div>
                 )}
