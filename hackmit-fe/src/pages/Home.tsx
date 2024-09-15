@@ -60,7 +60,7 @@ const Home: React.FC = () => {
                     <div className='home-button'>
                         <IonCard className='small-button' routerLink='/playground'>
                             <IonTitle>Generate practice sentences!</IonTitle>
-                            <div className='home-card-desc'>AI Playground</div>
+                            <div className='home-card-desc'>Word Soup</div>
                         </IonCard>
                     </div>
                 </div>

@@ -1,4 +1,3 @@
-import { useRef, useState } from 'react'
 import './Char.css'
 import { api } from '../../convex/_generated/api.js'
 import { useConvex } from 'convex/react'
@@ -6,6 +5,7 @@ import { useConvex } from 'convex/react'
 interface CharProps {
     char: string
     result?: string
+    audioUrl: string 
 }
 
 const Char: React.FC<CharProps> = ({ char, result }) => {
