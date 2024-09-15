@@ -1,11 +1,19 @@
 :root {
-    --color1: #4D8373;
-    --color2: #BFC9BD;
-    --color3: #D9E1EB;
-    --color4: #C2C8F8;
-    --color5: #EEECE7;
-    --color6: #F7F7F7;
-    --color7: #030303;
-    --color8: #F3958B;
-    --color9: #F5835C;
+    --ion-color-color1: #4D8373;
+    --ion-color-color2: #BFC9BD;
+    --ion-color-color3: #D9E1EB;
+    --ion-color-color4: #C2C8F8;
+    --ion-color-color5: #EEECE7;
+    --ion-color-color6: #F7F7F7;
+    --ion-color-color7: #030303;
+    --ion-color-color8: #F3958B;
+    --ion-color-color9: #F5835C;
+
+    --ion-background-color: var(--ion-color-color5);
+    --ion-text-color: var(--ion-color-color7);
+
+    [theme="dark"] {
+        --ion-background-color: var(--ion-color-color7);
+        --ion-text-color: var(--ion-color-color5);
+    }
 }
