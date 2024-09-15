@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar, IonButton, IonGrid, IonRow, IonCol } from '@ionic/react';
+import { IonButtons, IonBackButton, IonContent, IonHeader, IonPage, IonTitle, IonToolbar, IonButton, IonGrid, IonRow, IonCol } from '@ionic/react';
 import './Grid.css';
 import './Home.css';
 import logo from '../assets/nobg.png';
@@ -22,22 +22,23 @@ const Grid: React.FC = () => {
   return (
     <IonPage>
       <IonHeader>
-        <IonToolbar>
-          <div style={{ textAlign: 'center' }}>
-            <img
-              src={logo}
-              alt="Phonify Logo"
-              style={{ maxWidth: '70px', height: 'auto' }}
-            />
-          </div>
-        </IonToolbar>
+      <IonButtons slot="start">
+          <IonBackButton text="<" icon="" defaultHref="/" />
+        </IonButtons>
+        <IonToolbar className = "toolbar">
+        <img
+        src={logo}
+        alt="Phonify Logo"
+        style={{ maxWidth: '70px', height: 'auto' }}
+      />
+     </IonToolbar>
       </IonHeader>
 
       <IonContent fullscreen className="ion-padding">
-        <IonTitle style={{ textAlign: 'center', fontSize: '20px', marginTop: '10px', marginBottom: '5px' }}>
+        <IonTitle className = "title">
           {"IPA Alphabet"}
         </IonTitle>
-        <IonTitle style={{ textAlign: 'center', fontSize: '16px', marginBottom: '30px' }}>
+        <IonTitle className = "small-title">
           {"Tap an IPA syllable to learn it:"}
         </IonTitle>
 

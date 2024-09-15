@@ -1,4 +1,4 @@
-import { IonContent, IonHeader, IonPage, IonToolbar, IonButton, IonTitle, IonSearchbar } from '@ionic/react';
+import { IonContent, IonHeader, IonPage, IonToolbar, IonButton, IonButtons, IonTitle, IonSearchbar, IonBackButton } from '@ionic/react';
 import React, { useRef, useEffect, useState } from 'react';
 import './Words.css';
 import '../theme/variables.css';
@@ -66,23 +66,28 @@ const Words: React.FC = () => {
   }, []);
 
   return (
+    
     <IonPage>
+       
       <IonHeader>
-        <IonToolbar>
-          <div style={{ textAlign: 'center' }}>
-            <img
-              src={logo}
-              alt="Phonify Logo"
-              style={{ maxWidth: '70px', height: 'auto' }}
-            />
-          </div>
-        </IonToolbar>
+      <IonButtons slot="start">
+          <IonBackButton text="<" icon="" defaultHref="/" />
+        </IonButtons>
+
+        <IonToolbar className = "toolbar">
+        <img
+        src={logo}
+        alt="Phonify Logo"
+        style={{ maxWidth: '70px', height: 'auto' }}
+      />
+     </IonToolbar>
+ 
       </IonHeader>
       <IonContent fullscreen className="ion-padding" scrollY={false}>
-        <IonTitle style={{ textAlign: 'center', fontSize: '20px', marginTop: '10px', marginBottom: '5px' }}>
-          {"Choose a word to learn!"}
+        <IonTitle className = "title">
+         {"Choose a word to learn!"}
         </IonTitle>
-        <IonTitle style={{ textAlign: 'center', fontSize: '16px', marginBottom: '10px' }}>
+        <IonTitle className = "small-title">
           {"Or, search a word below:"}
         </IonTitle>
 
