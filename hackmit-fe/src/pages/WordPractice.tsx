@@ -178,7 +178,8 @@ const WordPractice: React.FC = () => {
                 theyAre('ɪ', 'ə') ||
                 theyAre('ɒ', 'ɔ') ||
                 theyAre('ɑ', 'ɔ') ||
-                theyAre('ɡ', 'ɡ')
+                theyAre('ɡ', 'ɡ') ||
+                theyAre('ɚ', 'r')
             )
                 return true
             return false

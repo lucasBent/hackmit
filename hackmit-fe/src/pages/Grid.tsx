@@ -9,12 +9,10 @@ import { api } from '../../convex/_generated/api'
 const Grid: React.FC = () => {
     const syllables = useQuery(api.audio.ipaChars, {})
     const convex = useConvex() // Convex client for manual query calls
-    const [isLoading, setIsLoading] = useState(false)
     const audioRef = useRef<HTMLAudioElement>(null)
 
     // Function to download, play and then delete the audio file using Blob URL
     const playAudio = async (syllable: string) => {
-        setIsLoading(true)
         try {
             // Fetch the audio URL from your getAudio endpoint
             const result = await convex.query(api.audio.getAudio, { ipaChar: syllable })
@@ -43,7 +41,6 @@ const Grid: React.FC = () => {
         } catch (error) {
             console.error('Error fetching audio URL:', error)
         }
-        setIsLoading(false)
     }
 
     return (
@@ -65,7 +62,6 @@ const Grid: React.FC = () => {
                                         className='syllable-button'
                                         expand='full'
                                         onClick={() => playAudio(syllable)} // Pass the syllable (IPA char) to playAudio
-                                        disabled={isLoading} // Disable button while loading
                                     >
                                         {syllable}
                                     </IonButton>
