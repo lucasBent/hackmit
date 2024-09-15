@@ -1,8 +1,7 @@
-import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar, IonButton, IonButtons } from '@ionic/react';
-import ExploreContainer from '../components/ExploreContainer';
+import { IonContent, IonHeader, IonPage, IonTitle, IonButton } from '@ionic/react';
 import '../theme/variables.css';
-import logo from '../assets/nobg.png';
 import './Home.css';
+import Toolbar from '../components/Toolbar.js';
 
 const Home: React.FC = () => {
 
@@ -29,13 +28,7 @@ const Home: React.FC = () => {
   return (
     <IonPage>
       <IonHeader>
-        <IonToolbar className = "toolbar">
-        <img
-        src={logo}
-        alt="Phonify Logo"
-        style={{ maxWidth: '70px', height: 'auto' }}
-      />
-     </IonToolbar>
+        <Toolbar backButton={false}/>
       </IonHeader >
       <IonContent fullscreen className="ion-padding">
         <IonTitle className = "title">{getGreeting()}</IonTitle>

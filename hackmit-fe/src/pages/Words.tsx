@@ -1,8 +1,8 @@
-import { IonContent, IonHeader, IonPage, IonToolbar, IonButton, IonButtons, IonTitle, IonSearchbar, IonBackButton } from '@ionic/react';
+import { IonContent, IonHeader, IonPage, IonButton, IonTitle, IonSearchbar } from '@ionic/react';
 import React, { useRef, useEffect, useState } from 'react';
 import './Words.css';
 import '../theme/variables.css';
-import logo from '../assets/nobg.png';
+import Toolbar from '../components/Toolbar.js';
 
 const Words: React.FC = () => {
   const [searchText, setSearchText] = useState('');
@@ -70,17 +70,7 @@ const Words: React.FC = () => {
     <IonPage>
        
       <IonHeader>
-      <IonButtons slot="start">
-          <IonBackButton text="<" icon="" defaultHref="/" />
-        </IonButtons>
-
-        <IonToolbar className = "toolbar">
-        <img
-        src={logo}
-        alt="Phonify Logo"
-        style={{ maxWidth: '70px', height: 'auto' }}
-      />
-     </IonToolbar>
+      <Toolbar />
  
       </IonHeader>
       <IonContent fullscreen className="ion-padding" scrollY={false}>
@@ -108,6 +98,7 @@ const Words: React.FC = () => {
           {filteredWords.map((word, index) => (
             <div key={index} className="word-card">
               <IonButton
+              routerLink={`/word-practice/${word.toLocaleLowerCase()}`}
                 className="word-button"
                 expand="block"
                 style={{ '--background': colorClasses[index % colorClasses.length] }}

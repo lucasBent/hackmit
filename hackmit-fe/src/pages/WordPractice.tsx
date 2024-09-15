@@ -1,8 +1,18 @@
-import { IonContent, IonFab, IonFabButton, IonHeader, IonPage, IonSpinner, IonTitle, IonToolbar } from '@ionic/react'
+import {
+    IonButton,
+    IonContent,
+    IonFab,
+    IonFabButton,
+    IonHeader,
+    IonPage,
+    IonSpinner,
+    IonTitle,
+    IonToolbar,
+} from '@ionic/react'
 import './WordPractice.css'
-import { IonCard, IonCardContent, IonCardHeader, IonCardSubtitle, IonCardTitle } from '@ionic/react'
-import { IonButton, IonIcon } from '@ionic/react'
-import { add, mic, play, stopOutline } from 'ionicons/icons'
+import { IonCard, IonCardContent, IonCardHeader, IonCardTitle } from '@ionic/react'
+import { IonIcon } from '@ionic/react'
+import { mic, refreshCircleOutline, stopCircleOutline, stopOutline } from 'ionicons/icons'
 import { useEffect, useState } from 'react'
 import { useParams } from 'react-router'
 import { useQuery } from 'convex/react'
@@ -11,6 +21,9 @@ import { Word } from '../type/Word.js'
 import { VoiceRecorder } from 'capacitor-voice-recorder'
 import backend from '../util/Backend.js'
 import Phrase from '../components/Phrase.js'
+import Toolbar from '../components/Toolbar.js'
+import { useAudioRecorder } from 'react-audio-voice-recorder'
+import { LiveAudioVisualizer } from 'react-audio-visualize'
 
 interface WordPracticeParams {
     word: string
@@ -36,7 +49,13 @@ const WordPractice: React.FC = () => {
     }
 
     function cleanTranscription(transcription: string) {
-        transcription = transcription.replaceAll(' ', '').replaceAll('ˈ', '').replaceAll('ː', '').replaceAll('ˌ', '')
+        transcription = transcription
+            .replaceAll(' ', '')
+            .replaceAll('ˈ', '')
+            .replaceAll('ː', '')
+            .replaceAll('ˌ', '')
+            .replaceAll('*', '')
+            .replaceAll('͡', '')
         return transcription
     }
 
@@ -50,14 +69,17 @@ const WordPractice: React.FC = () => {
     const [attemptTranscription, setAttemptTranscription] = useState('')
     const [hasRecorded, setHasRecorded] = useState(false)
     const [attemptResults, setAttemptResults] = useState<string[]>([])
+    const recorder = useAudioRecorder()
 
     async function recordButtonPressed() {
         if (!recording) {
             setRecording(true)
+            recorder.startRecording()
             const tryRecording = await VoiceRecorder.startRecording()
         } else {
             setHasRecorded(true)
             setRecording(false)
+            recorder.stopRecording()
             setAttemptTranscription('')
             const getRecording = await VoiceRecorder.stopRecording()
             const response = await backend.doPost('transcribe', {
@@ -109,7 +131,7 @@ const WordPractice: React.FC = () => {
 
         function isMatch(c1: string, c2: string) {
             const chars = [c1, c2]
-            if (c1 === c2 || theyAre('ɝ', 'ɚ') || theyAre('ɹ', 'r') || theyAre('ɪ', 'ə')) return true
+            if (c1 === c2 || theyAre('ɝ', 'ɚ') || theyAre('ɹ', 'r') || theyAre('ɪ', 'ə') || theyAre('ɒ', 'ɔ')) return true
             return false
 
             function theyAre(similar1: string, similar2: string) {
@@ -131,9 +153,7 @@ const WordPractice: React.FC = () => {
     return (
         <IonPage>
             <IonHeader>
-                <IonToolbar>
-                    <IonTitle>Word Practice</IonTitle>
-                </IonToolbar>
+                <Toolbar />
             </IonHeader>
             <IonContent fullscreen>
                 <IonHeader collapse='condense'>
@@ -142,7 +162,13 @@ const WordPractice: React.FC = () => {
                     </IonToolbar>
                 </IonHeader>
                 <IonContent>
-                    <IonCard>
+                    <IonTitle className='title'>
+                        {/*make this better*/}
+                        {'Tap a card to hear!'}
+                    </IonTitle>
+                    <IonTitle className='small-title'>{'Or, record your voice for feedback:'}</IonTitle>
+
+                    <IonCard className='word-practice-card'>
                         <IonCardHeader>
                             <IonCardTitle>{word.toLocaleUpperCase()}</IonCardTitle>
                         </IonCardHeader>
@@ -169,11 +195,19 @@ const WordPractice: React.FC = () => {
                             )}
                         </IonCardContent>
                     </IonCard>
-                    <IonFab slot='fixed' vertical='bottom' horizontal='end'>
-                        <IonFabButton onClick={recordButtonPressed} disabled={!canRecord}>
-                            <IonIcon icon={recording ? stopOutline : mic}></IonIcon>
-                        </IonFabButton>
-                    </IonFab>
+
+                    <IonToolbar id='bottom-bar'>
+                        <div id='bottom-bar-inner-wrap'>
+                            <IonCard className='statusBar'>
+                                {recording && recorder?.mediaRecorder && (
+                                    <LiveAudioVisualizer mediaRecorder={recorder.mediaRecorder} width={200} height={75} />
+                                )}
+                            </IonCard>
+                            <IonButton id='record-button' shape='round' onClick={recordButtonPressed} disabled={!canRecord}>
+                                <IonIcon icon={recording ? stopOutline : mic}></IonIcon>
+                            </IonButton>
+                        </div>
+                    </IonToolbar>
                 </IonContent>
             </IonContent>
         </IonPage>

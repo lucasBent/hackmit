@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
-import { IonButtons, IonBackButton, IonContent, IonHeader, IonPage, IonTitle, IonToolbar, IonButton, IonGrid, IonRow, IonCol } from '@ionic/react';
+import { IonContent, IonHeader, IonPage, IonTitle, IonButton, IonGrid, IonRow, IonCol } from '@ionic/react';
 import './Grid.css';
 import './Home.css';
-import logo from '../assets/nobg.png';
+import Toolbar from '../components/Toolbar.js';
 
 const syllables = [
   //make these the actual IPA symbols
@@ -22,16 +22,7 @@ const Grid: React.FC = () => {
   return (
     <IonPage>
       <IonHeader>
-      <IonButtons slot="start">
-          <IonBackButton text="<" icon="" defaultHref="/" />
-        </IonButtons>
-        <IonToolbar className = "toolbar">
-        <img
-        src={logo}
-        alt="Phonify Logo"
-        style={{ maxWidth: '70px', height: 'auto' }}
-      />
-     </IonToolbar>
+      <Toolbar />
       </IonHeader>
 
       <IonContent fullscreen className="ion-padding">

@@ -9,5 +9,45 @@
 }
 
 #record-button {
-    width: 3rem;
+    --background: #4D8373;
+    width: 6rem;
+    margin: 0;
+}
+
+.back-box {
+    background-color: var(--ion-color-color1);
+    border-radius: 20px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    height: 400px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.statusBar {
+    height: 40px;
+    padding-top: 5px;
+    background-color: #f9f9f9;
+    width: 100%;
+    margin: 0;
+    margin-right: 0.5rem;
+}
+
+.word-practice-card {
+    background-color: #f9f9f9;
+    width: inherit;
+}
+
+#bottom-bar {
+    position: fixed;
+    max-width: calc(100vw - 1.5rem);
+    left: 0.75rem;
+    bottom: var(--ion-safe-area-bottom, 0);
+}
+
+#bottom-bar-inner-wrap {
+    display: flex;
+
 }
