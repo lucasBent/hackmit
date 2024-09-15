@@ -8,6 +8,7 @@ import {
     IonSpinner,
     IonTitle,
     IonToolbar,
+    IonSearchbar,
 } from '@ionic/react'
 import './WordPractice.css'
 import { IonCard, IonCardContent, IonCardHeader, IonCardTitle } from '@ionic/react'
@@ -159,26 +160,16 @@ const WordPractice: React.FC = () => {
         }
         setCanRecord(false)
     }
-
     return (
         <IonPage>
             <IonHeader>
                 <Toolbar />
             </IonHeader>
-            <IonContent fullscreen>
-                <IonHeader collapse='condense'>
-                    <IonToolbar>
-                        <IonTitle size='large'>Word Practice</IonTitle>
-                    </IonToolbar>
-                </IonHeader>
-                <IonContent>
-                    <IonTitle className='title'>
-                        {/*make this better*/}
-                        {'Tap a card to hear!'}
-                    </IonTitle>
-                    <IonTitle className='small-title'>{'Or, record your voice for feedback:'}</IonTitle>
+            <IonContent fullscreen className='ion-padding' scrollY={false}>
+                <IonTitle className='page-title'>IPA Practice</IonTitle>
+                <IonTitle className='page-subtitle'>Tap the card to hear the pronunciation or record your voice to compare!</IonTitle>
 
-                    <IonCard className='word-practice-card'>
+                <IonCard className='word-card'>
                         <IonCardHeader>
                             <IonCardTitle>{word.toLocaleUpperCase()}</IonCardTitle>
                         </IonCardHeader>
@@ -205,7 +196,6 @@ const WordPractice: React.FC = () => {
                             )}
                         </IonCardContent>
                     </IonCard>
-
                     <IonToolbar id='bottom-bar'>
                         <div id='bottom-bar-inner-wrap'>
                             <IonCard className='statusBar'>
@@ -218,7 +208,6 @@ const WordPractice: React.FC = () => {
                             </IonButton>
                         </div>
                     </IonToolbar>
-                </IonContent>
             </IonContent>
         </IonPage>
     )

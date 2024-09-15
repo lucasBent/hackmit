@@ -1,59 +1,72 @@
-.transcription {
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-}
-
-.record-wrap {
+.scrollable-vertical {
     display: flex;
+    flex-direction: column;
     align-items: center;
-    justify-content: center;
+    overflow-y: auto;
+    height: 100%;
 }
-
-#record-button {
-    --background: #4D8373;
-    width: 6rem;
+.page-subtitle{
+    font-size: 20px;
+    margin-top: 15%;
+    text-align: left;
+}
+.word-button {
+    --background: #EBD7FF;
+    width: 100%;
+    height: 90px;
+    border-radius: 15px;
+    box-shadow: none;
+    font-size: 18px;
+    color: var(--ion-color-color7);
     margin: 0;
-    box-shadow: none;
-}
-
-ion-button#record-button::part(native) {
-    box-shadow: none;
-}
-
-.back-box {
-    background-color: var(--ion-color-color1);
-    border-radius: 20px;
-    padding: 20px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    height: 400px;
     display: flex;
-    justify-content: center;
     align-items: center;
+    justify-content: center;
+    text-align: center;
+    font-family: Lora, Georgia, 'Times New Roman', Times, serif;
+    font-size: 2rem;
+}
 
+.word-card {
+    margin-top:20%;
+    margin-bottom:50%;
+    text-align: center;
+    width: inherit;
+    transition: transform 0.3s, z-index 0.3s;
+    background-color: var(--ion-color-color4);
+    color: white;
+    border: 3px solid var(--ion-color-color4);  
+    border-radius: 10px; 
+    padding: 20px;
+  
+}
+
+ion-searchbar.searchbar {
+    margin-top: 20px;
+    --background: var(--ion-color-color6) !important;
+    box-shadow: none !important;
+    --placeholder-color: black !important;
+    width: 90%; 
+   
+}
+
+ion-searchbar input {
+    box-shadow: none !important;
+    height: 4rem !important;
+    border-radius: 1rem !important;
+}
+
+
+#bottom-bar-inner-wrap{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+.record-button{
+    align-self: center;
 }
 
 .statusBar {
-    height: 40px;
-    padding-top: 5px;
-    background-color: #f9f9f9;
     width: 100%;
-    margin: 0;
-    margin-right: 0.5rem;
-    box-shadow: none;
-}
-
-.word-practice-card {
-    background-color: #f9f9f9;
-    width: inherit;
-}
-
-#bottom-bar {
-    position: fixed;
-    max-width: calc(100vw - 1.5rem);
-    left: 0.75rem;
-    bottom: var(--ion-safe-area-bottom, 0);
-}
-
-#bottom-bar-inner-wrap {
-    display: flex;
-
 }
