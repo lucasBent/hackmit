@@ -97,6 +97,7 @@ const Words: React.FC = () => {
                                 className='word-button'
                                 expand='block'
                                 style={{ '--background': colorClasses[index % colorClasses.length] }}
+                                routerLink='/temp' 
                             >
                                 {word}
                             </IonButton>
