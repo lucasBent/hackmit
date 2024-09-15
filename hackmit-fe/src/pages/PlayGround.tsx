@@ -41,7 +41,7 @@ const PlayGround: React.FC = () => {
 
     const generatePhrase = async () => {
         const words = selectedWords.map((w) => w.word).join(', ')
-        const prompt = `Generate the shortest sentence possible using the following words at least once each: ${words}. Make sure it is a full sentence though.`
+        const prompt = `Generate a very simple sentence using the following words at least once each: ${words}. Make sure it is a full sentence though.`
 
         console.log('Generating phrase with prompt:', prompt) // Debugging line
 
