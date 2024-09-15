@@ -13,8 +13,10 @@
 .char {
     font-size: 2rem;
     display: inline-block;
-    background-color: var(--ion-color-color3);
+    background-color: #D9D9D9;
     border-radius: 0.3rem;
     width: 2rem;
+    margin-right: 0.115rem;
     text-align: center;
+    color: var(--ion-color-color7);
 }

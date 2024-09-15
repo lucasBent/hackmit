@@ -4,7 +4,10 @@
     align-items: center;
     overflow-y: auto;
     height: 100%;
+}
 
+.scrollable-vertical .search-word-card:first-child {
+    margin-top: 0.5rem !important;
 }
 
 .word-button {
@@ -24,7 +27,7 @@
     font-size: 2rem;
 }
 
-.word-card {
+.search-word-card {
     width: 90%;
     transition: transform 0.3s, z-index 0.3s;
 }
@@ -39,6 +42,7 @@ ion-searchbar.searchbar {
     box-shadow: none !important;
     --placeholder-color: black !important;
     padding: 0 1rem;
+    width: 100%;
 }
 
 ion-searchbar input {
