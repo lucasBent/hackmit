@@ -20,3 +20,14 @@ export const getAudio = query({
     }
 })
 
+
+export const getWordAudio = query({
+    args: {word: v.string()},
+    handler: async (ctx, args) => {
+        const word = await ctx.db.query("words_audio").withIndex("by_filename", (q) => q.eq('filename', args.word)).collect()
+        if (!word) {
+            return null
+        }
+        return { url: await ctx.storage.getUrl(word[0].storage_id)}
+    }
+})

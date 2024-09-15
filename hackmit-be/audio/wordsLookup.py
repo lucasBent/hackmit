@@ -1,4 +1,5 @@
 import requests
+import json
 
 def get_wiktionary_audio(word):
     # Define the URL for the API request
@@ -30,25 +31,31 @@ def get_wiktionary_audio(word):
         print(f"Error fetching data for '{word}': {response.status_code}")
         return []
 
-def process_words_from_file(input_file, output_file):
-    with open(input_file, 'r') as infile, open(output_file, 'w') as outfile:
-        for line in infile:
-            word = line.strip()  # Get the word and strip any extra whitespace
+def process_words_from_json(input_file, output_file):
+    # Use 'utf-8' encoding to open the file
+    with open(input_file, 'r', encoding='utf-8') as infile, open(output_file, 'w', encoding='utf-8') as outfile:
+        # Load the JSONL data from the input file
+        data = [json.loads(line) for line in infile]
+        
+        for entry in data:
+            word = entry.get('word', '').strip()  # Get the word from the JSON object
+            ipa = entry.get('ipa', '').strip()    # Get the IPA notation if needed (for output)
+            
             if word:
                 # Fetch audio links for the current word
                 audio_urls = get_wiktionary_audio(word)
                 if audio_urls:
-                    # Write the word and its audio URLs to the output file
-                    outfile.write(f"Word: {word}\n")
+                    # Write the word, its IPA, and audio URLs to the output file
+                    outfile.write(f"Word: {word}\nIPA: {ipa}\n")
                     for url in audio_urls:
                         outfile.write(f"{url}\n")
                     outfile.write("\n")  # Add an extra newline between words
                 else:
-                    outfile.write(f"Word: {word} - No audio found\n\n")
+                    outfile.write(f"Word: {word} (IPA: {ipa}) - No audio found\n\n")
 
     print(f"Processing complete. Results written to {output_file}")
 
 # Example usage
-input_file = "input_words.txt"  # File with words to process (one word per line)
+input_file = "documents.jsonl"  # JSONL file with words and IPA
 output_file = "audio_links_output.txt"  # File to write the audio URLs
-process_words_from_file(input_file, output_file)
+process_words_from_json(input_file, output_file)

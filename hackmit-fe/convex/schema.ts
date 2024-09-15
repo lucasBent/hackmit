@@ -2,6 +2,11 @@ import { defineSchema, defineTable } from 'convex/server'
 import { v } from 'convex/values'
 
 export default defineSchema({
+    words_audio: defineTable({
+        filename: v.string(),
+        storage_id: v.id("_storage"),
+      })
+      .index('by_filename', ['filename']),
     ipa: defineTable({
         ipa_char: v.string(),
         storage_id: v.id("_storage"),
