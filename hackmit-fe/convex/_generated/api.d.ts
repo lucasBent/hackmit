@@ -15,6 +15,7 @@ import type {
   FilterApi,
   FunctionReference,
 } from "convex/server";
+import type * as audio from "../audio.js";
 import type * as ipaCompare from "../ipaCompare.js";
 import type * as tasks from "../tasks.js";
 
@@ -27,6 +28,7 @@ import type * as tasks from "../tasks.js";
  * ```
  */
 declare const fullApi: ApiFromModules<{
+  audio: typeof audio;
   ipaCompare: typeof ipaCompare;
   tasks: typeof tasks;
 }>;

@@ -1,0 +1,199 @@
+Word: i
+https://commons.wikimedia.org/wiki/Special:FilePath/Close_front_unrounded_vowel.ogg
+https://commons.wikimedia.org/wiki/Special:FilePath/Media:I_morse_code.ogg
+https://commons.wikimedia.org/wiki/Special:FilePath/en-us-i.ogg
+https://commons.wikimedia.org/wiki/Special:FilePath/Cs-i.ogg
+https://commons.wikimedia.org/wiki/Special:FilePath/Nl-i.ogg
+https://commons.wikimedia.org/wiki/Special:FilePath/Eo-i.ogg
+https://commons.wikimedia.org/wiki/Special:FilePath/Fi-i.ogg
+https://commons.wikimedia.org/wiki/Special:FilePath/LL-Q150_(fra)-Jules78120-i.wav
+https://commons.wikimedia.org/wiki/Special:FilePath/lv-riga-i.ogg
+https://commons.wikimedia.org/wiki/Special:FilePath/LL-Q14185_(oci)-Davidgrosclaude-i.wav
+https://commons.wikimedia.org/wiki/Special:FilePath/Pl-i.ogg
+https://commons.wikimedia.org/wiki/Special:FilePath/LL-Q809_(pol)-Olaf-i.wav
+https://commons.wikimedia.org/wiki/Special:FilePath/LL-Q809_(pol)-Krokus-i.wav
+https://commons.wikimedia.org/wiki/Special:FilePath/Pt-br-i.ogg
+https://commons.wikimedia.org/wiki/Special:FilePath/Sr-i.ogg
+https://commons.wikimedia.org/wiki/Special:FilePath/sl-nt-i.ogg
+https://commons.wikimedia.org/wiki/Special:FilePath/Letter_i_es_es.flac
+https://commons.wikimedia.org/wiki/Special:FilePath/Sv-i.ogg
+https://commons.wikimedia.org/wiki/Special:FilePath/LL-Q256_(tur)-ToprakM-i.wav
+
+Word: ɪ
+https://commons.wikimedia.org/wiki/Special:FilePath/Near-close_near-front_unrounded_vowel.ogg
+
+Word: e
+https://commons.wikimedia.org/wiki/Special:FilePath/Close-mid_front_unrounded_vowel.ogg
+https://commons.wikimedia.org/wiki/Special:FilePath/Media:E_morse_code.ogg
+https://commons.wikimedia.org/wiki/Special:FilePath/En-uk-e.ogg
+https://commons.wikimedia.org/wiki/Special:FilePath/en-us-e.ogg
+https://commons.wikimedia.org/wiki/Special:FilePath/LL-Q14196_(afr)-Oesjaar-e.wav
+https://commons.wikimedia.org/wiki/Special:FilePath/Nl-e.ogg
+https://commons.wikimedia.org/wiki/Special:FilePath/Eo-e.ogg
+https://commons.wikimedia.org/wiki/Special:FilePath/Fi-e.ogg
+https://commons.wikimedia.org/wiki/Special:FilePath/LL-Q150_(fra)-Jules78120-e.wav
+https://commons.wikimedia.org/wiki/Special:FilePath/Hu-e.ogg
+https://commons.wikimedia.org/wiki/Special:FilePath/lv-riga-e.ogg
+https://commons.wikimedia.org/wiki/Special:FilePath/lv-riga-e-broad.ogg
+https://commons.wikimedia.org/wiki/Special:FilePath/LL-Q809_(pol)-Olaf-e.wav
+https://commons.wikimedia.org/wiki/Special:FilePath/Pt-br-i.ogg
+https://commons.wikimedia.org/wiki/Special:FilePath/Pt-br-e.ogg
+https://commons.wikimedia.org/wiki/Special:FilePath/Ro-e.ogg
+https://commons.wikimedia.org/wiki/Special:FilePath/Sl-nt-e.ogg
+https://commons.wikimedia.org/wiki/Special:FilePath/letter_e_es_es.flac
+https://commons.wikimedia.org/wiki/Special:FilePath/Wym-e_(wersja_J�zefa_Gary).ogg
+
+Word: æ 
+https://commons.wikimedia.org/wiki/Special:FilePath/Near-open_front_unrounded_vowel.ogg
+
+Word: ɑ
+https://commons.wikimedia.org/wiki/Special:FilePath/Open_back_unrounded_vowel.ogg
+
+Word: ɔ
+https://commons.wikimedia.org/wiki/Special:FilePath/Open-mid_back_rounded_vowel.ogg
+
+Word: ʊ 
+https://commons.wikimedia.org/wiki/Special:FilePath/near-close_near-back_rounded_vowel.ogg
+
+Word: u
+https://commons.wikimedia.org/wiki/Special:FilePath/Close_back_rounded_vowel.ogg
+https://commons.wikimedia.org/wiki/Special:FilePath/Media:U_morse_code.ogg
+https://commons.wikimedia.org/wiki/Special:FilePath/en-ca-u.ogg
+https://commons.wikimedia.org/wiki/Special:FilePath/en-us-u.ogg
+https://commons.wikimedia.org/wiki/Special:FilePath/Cs-u.ogg
+https://commons.wikimedia.org/wiki/Special:FilePath/Nl-u.ogg
+https://commons.wikimedia.org/wiki/Special:FilePath/Eo-u.ogg
+https://commons.wikimedia.org/wiki/Special:FilePath/Fi-u.ogg
+https://commons.wikimedia.org/wiki/Special:FilePath/LL-Q150_(fra)-Jules78120-u.wav
+https://commons.wikimedia.org/wiki/Special:FilePath/LL-Q9043_(nor)-Jon_Harald_S�by_(WMNO)-u.wav
+https://commons.wikimedia.org/wiki/Special:FilePath/Pl-u.ogg
+https://commons.wikimedia.org/wiki/Special:FilePath/LL-Q809_(pol)-Olaf-u.wav
+https://commons.wikimedia.org/wiki/Special:FilePath/LL-Q809_(pol)-Gower-u.wav
+https://commons.wikimedia.org/wiki/Special:FilePath/Sr-u.ogg
+https://commons.wikimedia.org/wiki/Special:FilePath/letter_u_es_es.flac
+https://commons.wikimedia.org/wiki/Special:FilePath/LL-Q1321_(spa)-AdrianAbdulBaha-u.wav
+https://commons.wikimedia.org/wiki/Special:FilePath/LL-Q9199_(vie)-Jessica_Nguyen_(Pamputt)-u.wav
+
+Word: ʌ 
+https://commons.wikimedia.org/wiki/Special:FilePath/Open-mid_back_unrounded_vowel.ogg
+
+Word: ə
+https://commons.wikimedia.org/wiki/Special:FilePath/Near-open_front_unrounded_vowel.ogg
+
+Word: ɛ 
+https://commons.wikimedia.org/wiki/Special:FilePath/Open-mid_front_unrounded_vowel.ogg
+
+Word: ð
+https://commons.wikimedia.org/wiki/Special:FilePath/Voiced_dental_fricative.ogg
+
+Word: s
+https://commons.wikimedia.org/wiki/Special:FilePath/Voiceless_alveolar_sibilant.ogg
+https://commons.wikimedia.org/wiki/Special:FilePath/Media:S_morse_code.ogg
+https://commons.wikimedia.org/wiki/Special:FilePath/en-us-s.ogg
+https://commons.wikimedia.org/wiki/Special:FilePath/Cs-s.ogg
+https://commons.wikimedia.org/wiki/Special:FilePath/Nl-s.ogg
+https://commons.wikimedia.org/wiki/Special:FilePath/Eo-s.ogg
+https://commons.wikimedia.org/wiki/Special:FilePath/Fi-s.ogg
+https://commons.wikimedia.org/wiki/Special:FilePath/Hu-s.ogg
+https://commons.wikimedia.org/wiki/Special:FilePath/LL-Q9043_(nor)-Jon_Harald_S�by_(WMNO)-s.wav
+https://commons.wikimedia.org/wiki/Special:FilePath/letter_s_es_es.flac
+
+Word: z
+https://commons.wikimedia.org/wiki/Special:FilePath/Voiced_alveolar_sibilant.ogg
+https://commons.wikimedia.org/wiki/Special:FilePath/Media:Z_morse_code.ogg
+https://commons.wikimedia.org/wiki/Special:FilePath/en-uk-z.ogg
+https://commons.wikimedia.org/wiki/Special:FilePath/en-us-z.ogg
+https://commons.wikimedia.org/wiki/Special:FilePath/Cs-z.ogg
+https://commons.wikimedia.org/wiki/Special:FilePath/Nl-z.ogg
+https://commons.wikimedia.org/wiki/Special:FilePath/Eo-z.ogg
+https://commons.wikimedia.org/wiki/Special:FilePath/Fi-z.ogg
+https://commons.wikimedia.org/wiki/Special:FilePath/LL-Q9043_(nor)-Jon_Harald_S�by_(WMNO)-z.wav
+https://commons.wikimedia.org/wiki/Special:FilePath/Pl-z.ogg
+https://commons.wikimedia.org/wiki/Special:FilePath/letter_z_es_es.flac
+
+Word: ʃ 
+https://commons.wikimedia.org/wiki/Special:FilePath/Voiceless_palato-alveolar_sibilant.ogg
+
+Word: ʒ 
+https://commons.wikimedia.org/wiki/Special:FilePath/Voiced_palato-alveolar_sibilant.ogg
+
+Word: t
+https://commons.wikimedia.org/wiki/Special:FilePath/Voiceless_alveolar_plosive.ogg
+https://commons.wikimedia.org/wiki/Special:FilePath/Media:T_morse_code.ogg
+https://commons.wikimedia.org/wiki/Special:FilePath/en-us-t.ogg
+https://commons.wikimedia.org/wiki/Special:FilePath/Eo-t.ogg
+https://commons.wikimedia.org/wiki/Special:FilePath/Fi-t.ogg
+https://commons.wikimedia.org/wiki/Special:FilePath/De-t.ogg
+https://commons.wikimedia.org/wiki/Special:FilePath/LL-Q9043_(nor)-Jon_Harald_S�by_(WMNO)-t.wav
+https://commons.wikimedia.org/wiki/Special:FilePath/letter_t_es_es.flac
+https://commons.wikimedia.org/wiki/Special:FilePath/Sv-te.ogg
+
+Word: d
+https://commons.wikimedia.org/wiki/Special:FilePath/Voiced_alveolar_plosive.ogg
+https://commons.wikimedia.org/wiki/Special:FilePath/Media:D_morse_code.ogg
+https://commons.wikimedia.org/wiki/Special:FilePath/en-us-d.ogg
+https://commons.wikimedia.org/wiki/Special:FilePath/en-uk-d.ogg
+https://commons.wikimedia.org/wiki/Special:FilePath/Nl-d.ogg
+https://commons.wikimedia.org/wiki/Special:FilePath/Eo-d.ogg
+https://commons.wikimedia.org/wiki/Special:FilePath/Fi-d.ogg
+https://commons.wikimedia.org/wiki/Special:FilePath/LL-Q150_(fra)-Jules78120-d.wav
+https://commons.wikimedia.org/wiki/Special:FilePath/Hu-d�.ogg
+https://commons.wikimedia.org/wiki/Special:FilePath/lv-riga-d.ogg
+https://commons.wikimedia.org/wiki/Special:FilePath/No-d.ogg
+https://commons.wikimedia.org/wiki/Special:FilePath/Pt-br-d.ogg
+https://commons.wikimedia.org/wiki/Special:FilePath/Sl-nt-d.ogg
+https://commons.wikimedia.org/wiki/Special:FilePath/letter_d_es_es.flac
+
+Word: k
+https://commons.wikimedia.org/wiki/Special:FilePath/Voiceless_velar_plosive.ogg
+https://commons.wikimedia.org/wiki/Special:FilePath/Media:K_morse_code.ogg
+https://commons.wikimedia.org/wiki/Special:FilePath/en-us-k.ogg
+https://commons.wikimedia.org/wiki/Special:FilePath/En-uk-k.ogg
+https://commons.wikimedia.org/wiki/Special:FilePath/Cs-k.ogg
+https://commons.wikimedia.org/wiki/Special:FilePath/Eo-k.ogg
+https://commons.wikimedia.org/wiki/Special:FilePath/Fi-k.ogg
+https://commons.wikimedia.org/wiki/Special:FilePath/lv-riga-k.ogg
+https://commons.wikimedia.org/wiki/Special:FilePath/LL-Q9043_(nor)-Jon_Harald_S�by_(WMNO)-k.wav
+https://commons.wikimedia.org/wiki/Special:FilePath/Letter_k_es_es.flac
+
+Word: g
+https://commons.wikimedia.org/wiki/Special:FilePath/Voiced_velar_stop.ogg
+https://commons.wikimedia.org/wiki/Special:FilePath/Media:G_morse_code.ogg
+https://commons.wikimedia.org/wiki/Special:FilePath/en-us-g.ogg
+https://commons.wikimedia.org/wiki/Special:FilePath/en-uk-g.ogg
+https://commons.wikimedia.org/wiki/Special:FilePath/Nl-g.ogg
+https://commons.wikimedia.org/wiki/Special:FilePath/Eo-g.ogg
+https://commons.wikimedia.org/wiki/Special:FilePath/Fi-g.ogg
+https://commons.wikimedia.org/wiki/Special:FilePath/LL-Q150_(fra)-Jules78120-g.wav
+https://commons.wikimedia.org/wiki/Special:FilePath/Hu-g�.ogg
+https://commons.wikimedia.org/wiki/Special:FilePath/lv-riga-g.ogg
+https://commons.wikimedia.org/wiki/Special:FilePath/LL-Q9043_(nor)-Jon_Harald_S�by_(WMNO)-g.wav
+https://commons.wikimedia.org/wiki/Special:FilePath/Pt-br-g.ogg
+https://commons.wikimedia.org/wiki/Special:FilePath/Sl-nt-g.ogg
+https://commons.wikimedia.org/wiki/Special:FilePath/Sl-nt-g-dialectal.ogg
+https://commons.wikimedia.org/wiki/Special:FilePath/letter_g_es_es.flac
+
+Word: p
+https://commons.wikimedia.org/wiki/Special:FilePath/Voiceless_bilabial_plosive.ogg
+https://commons.wikimedia.org/wiki/Special:FilePath/Media:P_morse_code.ogg
+https://commons.wikimedia.org/wiki/Special:FilePath/en-us-p.ogg
+https://commons.wikimedia.org/wiki/Special:FilePath/Nl-p.ogg
+https://commons.wikimedia.org/wiki/Special:FilePath/Eo-p.ogg
+https://commons.wikimedia.org/wiki/Special:FilePath/Fi-p.ogg
+https://commons.wikimedia.org/wiki/Special:FilePath/LL-Q9043_(nor)-Jon_Harald_S�by_(WMNO)-p.wav
+https://commons.wikimedia.org/wiki/Special:FilePath/Letter_p_es_es.flac
+
+Word: b
+https://commons.wikimedia.org/wiki/Special:FilePath/Voiced_bilabial_plosive.ogg
+https://commons.wikimedia.org/wiki/Special:FilePath/Media:B_morse_code.ogg
+https://commons.wikimedia.org/wiki/Special:FilePath/en-uk-b.ogg
+https://commons.wikimedia.org/wiki/Special:FilePath/en-us-b.ogg
+https://commons.wikimedia.org/wiki/Special:FilePath/Nl-b.ogg
+https://commons.wikimedia.org/wiki/Special:FilePath/Eo-b.ogg
+https://commons.wikimedia.org/wiki/Special:FilePath/Fi-b.ogg
+https://commons.wikimedia.org/wiki/Special:FilePath/LL-Q150_(fra)-Lepticed7-b.wav
+https://commons.wikimedia.org/wiki/Special:FilePath/Hu-b�.ogg
+https://commons.wikimedia.org/wiki/Special:FilePath/lv-riga-b.ogg
+https://commons.wikimedia.org/wiki/Special:FilePath/Nb-be.ogg
+https://commons.wikimedia.org/wiki/Special:FilePath/LL-Q9043_(nor)-Jon_Harald_S�by_(WMNO)-b.wav
+https://commons.wikimedia.org/wiki/Special:FilePath/Pt-br-b.ogg
