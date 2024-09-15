@@ -60,9 +60,6 @@ const App: React.FC = () => (
                     <Route exact path='/word-practice/:word'>
                         <WordPractice />
                     </Route>
-                    <Route exact path='/temp'>
-                        <Temp />
-                    </Route>
                     <Route exact path='/playground'>
                         <PlayGround />
                     </Route>
