@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap');
 :root {
     --ion-color-color1: #4D8373;
     --ion-color-color2: #BFC9BD;
@@ -28,7 +29,7 @@
     text-align: center;
     font-size: 18px;
     margin-top: 5px;
-    margin-bottom: 15px;
+    margin-bottom: 20px;
 
 }
 
