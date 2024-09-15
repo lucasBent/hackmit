@@ -5,6 +5,7 @@ import '../theme/variables.css'
 import { api } from '../../convex/_generated/api.js'
 import { useQuery } from 'convex/react'
 import Toolbar from '../components/Toolbar.js'
+import { Word } from '../type/Word.js'
 
 const Words: React.FC = () => {
     const [searchText, setSearchText] = useState<string>('') // Search text state
@@ -53,7 +54,17 @@ const Words: React.FC = () => {
     }, [])
 
     // Choose which words to display (searched or fetched)
-    const displayedWords = searchText && filteredWords ? filteredWords : fetchedWords || [] // Add a fallback for null
+    let displayedWords = searchText && filteredWords ? filteredWords : fetchedWords || [] // Add a fallback for null
+
+    displayedWords = uniquifyEntries(displayedWords)
+
+    function uniquifyEntries(entries: string[]) {
+        var seenHits: Record<string, boolean> = {}
+        return entries.filter((entry) => {
+            var k = entry
+            return seenHits.hasOwnProperty(k) ? false : (seenHits[k] = true)
+        })
+    }
 
     return (
         <IonPage>

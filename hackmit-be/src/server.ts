@@ -24,7 +24,8 @@ app.get('/', async (req, res) => {
 
 app.post('/transcribe', async (req, res) => {
     try {
-        await fs.writeFile('current.mp3', Buffer.from(req.body.recording, 'base64'))
+        let buffer = Buffer.from(req.body.recording, 'base64')
+        await fs.writeFile('current.mp3', buffer)
         const thing = await pipe('current.mp3')
         res.status(200).send({
             message: `${thing}`,
