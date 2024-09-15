@@ -13,10 +13,10 @@ import {
 import './WordPractice.css'
 import { IonCard, IonCardContent, IonCardHeader, IonCardTitle } from '@ionic/react'
 import { IonIcon } from '@ionic/react'
-import { mic, refreshCircleOutline, stopCircleOutline, stopOutline } from 'ionicons/icons'
-import { useEffect, useState } from 'react'
+import { headset, mic, refreshCircleOutline, stopCircleOutline, stopOutline } from 'ionicons/icons'
+import { useEffect, useState, useRef } from 'react'
 import { useParams } from 'react-router'
-import { useQuery } from 'convex/react'
+import { useQuery, useConvex } from 'convex/react'
 import { api } from '../../convex/_generated/api.js'
 import { Word } from '../type/Word.js'
 import { VoiceRecorder } from 'capacitor-voice-recorder'
@@ -33,6 +33,44 @@ interface WordPracticeParams {
 const WordPractice: React.FC = () => {
     const { word } = useParams<WordPracticeParams>()
     const wordData = useQuery(api.tasks.getWord, { word: word })
+
+    const convex = useConvex() // Convex client for manual query calls
+    const [isLoading, setIsLoading] = useState(false)
+    const audioRef = useRef<HTMLAudioElement>(null)
+
+    // Function to download, play and then delete the audio file using Blob URL
+    const playAudio = async (word: string) => {
+        setIsLoading(true)
+        try {
+            // Fetch the audio URL from your getAudio endpoint
+            const result = await convex.query(api.audio.getWordAudio, { word: word })
+
+            if (result?.url) {
+                // Fetch the audio file as a blob
+                const response = await fetch(result.url)
+                const blob = await response.blob()
+
+                // Create a local Blob URL
+                const blobUrl = URL.createObjectURL(blob)
+
+                // Set the Blob URL as the audio source and play
+                if (audioRef.current) {
+                    audioRef.current.src = blobUrl
+                    audioRef.current.play()
+
+                    // Once playback ends, revoke the Blob URL to free up memory
+                    audioRef.current.onended = () => {
+                        URL.revokeObjectURL(blobUrl)
+                    }
+                }
+            } else {
+                console.error('No valid audio URL found.')
+            }
+        } catch (error) {
+            console.error('Error fetching audio URL:', error)
+        }
+        setIsLoading(false)
+    }
 
     function sanitizeData(wordData: Word[]) {
         return uniquifyTranscriptions(wordData).map((entry) => {
@@ -177,10 +215,10 @@ const WordPractice: React.FC = () => {
                         </div>
                     </div>
                 </div>
-
                 <IonCard className='word-card'>
-                    <IonCardHeader>
+                    <IonCardHeader onClick={() => playAudio(word)} style={{ cursor: 'pointer' }}>
                         <IonCardTitle>{word.toLocaleUpperCase()}</IonCardTitle>
+                        <audio ref={audioRef} />
                     </IonCardHeader>
                     <IonCardContent>
                         {wordData ? (
