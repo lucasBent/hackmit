@@ -47,6 +47,7 @@ const Words: React.FC = () => {
         }
 
         container?.addEventListener('scroll', handleScroll)
+        setTimeout(() => document.querySelector('.scrollable-vertical')?.scrollTo(0, 1), 200)
 
         return () => {
             container?.removeEventListener('scroll', handleScroll)
@@ -72,11 +73,16 @@ const Words: React.FC = () => {
                 <Toolbar />
             </IonHeader>
             <IonContent fullscreen className='ion-padding' scrollY={false}>
-            <IonTitle className='app-title'>I:PAL</IonTitle>
                 <IonTitle className='page-title'>Dictionary</IonTitle>
                 <IonTitle className='page-subtitle'>Search or tap on a word.</IonTitle>
 
-                <IonSearchbar className='searchbar' value={searchText} onIonInput={(e: any) => setSearchText(e.target.value)} debounce={300} placeholder='Search...'/>
+                <IonSearchbar
+                    className='searchbar'
+                    value={searchText}
+                    onIonInput={(e: any) => setSearchText(e.target.value)}
+                    debounce={300}
+                    placeholder='Search...'
+                />
 
                 <div className='scrollable-vertical' ref={containerRef}>
                     {displayedWords.map((word: any, index: any) => (
