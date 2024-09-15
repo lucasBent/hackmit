@@ -20,8 +20,6 @@ const Words: React.FC = () => {
         'var(--ion-color-color9)',
     ]
 
-    const wordOfTheDay = 'Technology'
-
     const containerRef = useRef<HTMLDivElement>(null)
 
     useEffect(() => {
@@ -67,16 +65,6 @@ const Words: React.FC = () => {
                 <IonTitle className='small-title'>{'Or, search a word below:'}</IonTitle>
 
                 <IonSearchbar value={searchText} onIonInput={(e: any) => setSearchText(e.target.value)} debounce={300} />
-
-                <div className='word-of-the-day-card'>
-                    <IonButton
-                        className='word-of-the-day word-button '
-                        expand='block'
-                        routerLink={`/word-practice/${wordOfTheDay.toLocaleLowerCase()}`}
-                    >
-                        {'Word of the Day: ' + wordOfTheDay}
-                    </IonButton>
-                </div>
 
                 <div className='scrollable-vertical' ref={containerRef}>
                     {displayedWords.map((word: any, index: any) => (
