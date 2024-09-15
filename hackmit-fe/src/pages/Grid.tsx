@@ -8,6 +8,7 @@ import { api } from '../../convex/_generated/api'
 
 const Grid: React.FC = () => {
     const syllables = useQuery(api.audio.ipaChars, {})
+    console.log(syllables)
     const convex = useConvex() // Convex client for manual query calls
     const [isLoading, setIsLoading] = useState(false)
     const audioRef = useRef<HTMLAudioElement>(null)

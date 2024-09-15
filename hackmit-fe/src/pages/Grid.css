@@ -29,6 +29,7 @@
     box-shadow: none;
     margin: 0;
     aspect-ratio: 1;
+    text-transform: unset !important;
 }
 
 .syllable-button:focus {
