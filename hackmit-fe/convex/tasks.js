@@ -4,7 +4,7 @@ import { v } from 'convex/values'
 export const getWords = query({
     args: {},
     handler: async (ctx) => {
-        return await ctx.db.query('words').collect()
+        return await ctx.db.query('words').take(100)
     },
 })
 
