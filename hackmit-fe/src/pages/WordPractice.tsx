@@ -166,48 +166,65 @@ const WordPractice: React.FC = () => {
                 <Toolbar />
             </IonHeader>
             <IonContent fullscreen className='ion-padding' scrollY={false}>
-                <IonTitle className='page-title'>IPA Practice</IonTitle>
-                <div className='page-desc'>Tap the card to hear the pronunciation or record your voice to compare!</div>
+                <IonTitle className='page-title' style={{ marginBottom: '2rem' }}>
+                    IPA Practice
+                </IonTitle>
+                <div className='pal-contact-section' style={{ marginBottom: '2rem' }}>
+                    <img src='src/assets/bunny-ipal.png' style={{ width: 'auto', height: '4rem' }} />
+                    <div className='homepage-text-wrap' style={{ width: '60%' }}>
+                        <div className='homepage-subtitle' style={{ marginBottom: '0' }}>
+                            Tap the card to hear the pronunciation or record your voice to compare!
+                        </div>
+                    </div>
+                </div>
 
                 <IonCard className='word-card'>
-                        <IonCardHeader>
-                            <IonCardTitle>{word.toLocaleUpperCase()}</IonCardTitle>
-                        </IonCardHeader>
-                        <IonCardContent>
-                            {wordData ? (
-                                <h2 className='transcription'>
-                                    {sanitizedData.map(({ _id, ipa }: Word) => (
-                                        <div key={_id}>
-                                            {' '}
-                                            <Phrase phrase={ipa} />
-                                        </div>
-                                    ))}
-                                    {attemptTranscription ? (
-                                        <div key='attempt'>
-                                            {/* {attemptTranscription} */}
-                                            <Phrase phrase={attemptTranscription} results={attemptResults} />
-                                        </div>
-                                    ) : (
-                                        hasRecorded && <IonSpinner />
-                                    )}
-                                </h2>
-                            ) : (
-                                <IonSpinner />
-                            )}
-                        </IonCardContent>
-                    </IonCard>
-                    <IonToolbar id='bottom-bar'>
-                        <div id='bottom-bar-inner-wrap'>
-                            <IonCard className='statusBar'>
-                                {recording && recorder?.mediaRecorder && (
-                                    <LiveAudioVisualizer mediaRecorder={recorder.mediaRecorder} width={200} height={75} />
+                    <IonCardHeader>
+                        <IonCardTitle>{word.toLocaleUpperCase()}</IonCardTitle>
+                    </IonCardHeader>
+                    <IonCardContent>
+                        {wordData ? (
+                            <h2 className='transcription'>
+                                {sanitizedData.map(({ _id, ipa }: Word) => (
+                                    <div key={_id} className='transcription-wrap'>
+                                        {' '}
+                                        <Phrase phrase={ipa} />
+                                    </div>
+                                ))}
+                                {attemptTranscription ? (
+                                    <div key='attempt' className='transcription-wrap'>
+                                        {/* {attemptTranscription} */}
+                                        <Phrase phrase={attemptTranscription} results={attemptResults} />
+                                    </div>
+                                ) : (
+                                    hasRecorded && <IonSpinner />
                                 )}
-                            </IonCard>
-                            <IonButton id='record-button' shape='round' size='large' onClick={recordButtonPressed} disabled={!canRecord}>
-                                <IonIcon icon={recording ? stopOutline : mic}></IonIcon>
-                            </IonButton>
-                        </div>
-                    </IonToolbar>
+                            </h2>
+                        ) : (
+                            <IonSpinner />
+                        )}
+                    </IonCardContent>
+                </IonCard>
+                <IonToolbar id='bottom-bar'>
+                    <div id='bottom-bar-inner-wrap'>
+                        <IonCard className='statusBar'>
+                            {recording && recorder?.mediaRecorder ? (
+                                <LiveAudioVisualizer mediaRecorder={recorder.mediaRecorder} width={200} height={75} />
+                            ) : (
+                                'Ready to record'
+                            )}
+                        </IonCard>
+                        <IonButton
+                            id='record-button'
+                            shape='round'
+                            size='large'
+                            onClick={recordButtonPressed}
+                            disabled={!canRecord}
+                        >
+                            <IonIcon icon={recording ? stopOutline : mic}></IonIcon>
+                        </IonButton>
+                    </div>
+                </IonToolbar>
             </IonContent>
         </IonPage>
     )
