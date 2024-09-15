@@ -8,8 +8,8 @@ headers = {
     'User-Agent': 'YourAppName/1.0 (your-email@example.com)'
 }
 
-def download_ogg_file(url, save_path):
-    """Download the .ogg file from the provided URL with a custom User-Agent."""
+def download_file(url, save_path):
+    """Download the file from the provided URL with a custom User-Agent."""
     try:
         response = requests.get(url, headers=headers)
         response.raise_for_status()  # Check if the request was successful
@@ -47,10 +47,16 @@ def extract_first_urls_and_convert(input_file, download_dir, output_dir):
                 if current_word and first_url:
                     # Decode the word to handle special characters
                     decoded_word = urllib.parse.unquote(current_word)
-                    ogg_filename = os.path.join(download_dir, f"{decoded_word}.ogg")
-                    wav_filename = os.path.join(output_dir, f"{decoded_word}.wav")
-                    download_ogg_file(first_url, ogg_filename)
-                    convert_ogg_to_wav(ogg_filename, wav_filename)
+
+                    # Determine if the URL points to a .wav or .ogg file
+                    if first_url.endswith(".wav"):
+                        wav_filename = os.path.join(output_dir, f"{decoded_word}.wav")
+                        download_file(first_url, wav_filename)
+                    else:
+                        ogg_filename = os.path.join(download_dir, f"{decoded_word}.ogg")
+                        wav_filename = os.path.join(output_dir, f"{decoded_word}.wav")
+                        download_file(first_url, ogg_filename)
+                        convert_ogg_to_wav(ogg_filename, wav_filename)
 
                 # Start a new word and reset first URL
                 current_word = line.split("Word:")[1].strip()
@@ -63,16 +69,20 @@ def extract_first_urls_and_convert(input_file, download_dir, output_dir):
         # Handle the last word and its URL if any
         if current_word and first_url:
             decoded_word = urllib.parse.unquote(current_word)
-            ogg_filename = os.path.join(download_dir, f"{decoded_word}.ogg")
-            wav_filename = os.path.join(output_dir, f"{decoded_word}.wav")
-            download_ogg_file(first_url, ogg_filename)
-            convert_ogg_to_wav(ogg_filename, wav_filename)
+            if first_url.endswith(".wav"):
+                wav_filename = os.path.join(output_dir, f"{decoded_word}.wav")
+                download_file(first_url, wav_filename)
+            else:
+                ogg_filename = os.path.join(download_dir, f"{decoded_word}.ogg")
+                wav_filename = os.path.join(output_dir, f"{decoded_word}.wav")
+                download_file(first_url, ogg_filename)
+                convert_ogg_to_wav(ogg_filename, wav_filename)
 
     print(f"Extraction and conversion complete. Files saved to {output_dir}")
 
 # Example usage
 input_file = "audio_links_output.txt"  # Replace with your input file path
-download_directory = "downloaded_ogg_files"  # Directory for saving downloaded .ogg files
+download_directory = "downloaded_audio_files"  # Directory for saving downloaded .ogg/.wav files
 output_directory = "converted_wav_files"  # Directory for saving .wav files
 
 extract_first_urls_and_convert(input_file, download_directory, output_directory)
