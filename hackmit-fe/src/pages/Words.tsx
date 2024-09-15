@@ -91,13 +91,13 @@ const Words: React.FC = () => {
                 </div>
 
                 <div className='scrollable-vertical' ref={containerRef}>
-                    {displayedWords.map((word, index) => (
+                    {displayedWords.map((word: any, index: any) => (
                         <div key={index} className='word-card'>
                             <IonButton
                                 className='word-button'
                                 expand='block'
                                 style={{ '--background': colorClasses[index % colorClasses.length] }}
-                                routerLink='/temp' 
+                                routerLink={`/word-practice/${word.toLocaleLowerCase()}`}
                             >
                                 {word}
                             </IonButton>

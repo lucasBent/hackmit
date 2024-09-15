@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap');
+
 :root {
     --ion-color-color1: #4D8373;
     --ion-color-color2: #BFC9BD;
@@ -19,34 +20,27 @@
     }
 }
 
-.toolbar{
-    text-align: center;
-}
-
 .title {
     text-align: center;
-    font-size: 36px; 
-margin-top: 10px;
-    font-family: 'Cursive', sans-serif; 
-  }
-  .title {
-    font-family: 'Dancing Script', cursive; 
-  }
-  
-.small-title{
-    text-align: center ;
-    font-size: 16px;
+    font-size: 20px;
+    margin-top: 10px;
+}
+
+.small-title {
+    text-align: center;
+    font-size: 18px;
     margin-top: 5px;
     margin-bottom: 20px;
 
 }
 
-.centered-logo {
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
-    max-width: 70px;
-    height: auto;
-    bottom: 8%;
-  }
-  
+#top-title-wrap {
+    display: grid;
+    grid-template-columns: 1fr repeat(3, auto) 1fr;
+    align-items: center;
+    justify-content: center;
+}
+
+#toolbar-logo {
+    grid-column-start: 2;
+}
