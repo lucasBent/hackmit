@@ -4,6 +4,7 @@ import './Home.css';
 import Toolbar from '../components/Toolbar.js';
 
 const Home: React.FC = () => {
+  const wordOfTheDay = 'Technology'
 
   const getGreeting = () => {
     const hour = new Date().getHours();
@@ -35,7 +36,10 @@ const Home: React.FC = () => {
         <IonTitle className = "small-title">{getRandomMessage()}</IonTitle>
         <div className="button-container">
           <IonButton expand="block" className="small-button" style = {{height: '125px', marginBottom: '20px'}} routerLink='/words'>Learn</IonButton>
-          <IonButton expand="block" className="small-button" style = {{height: '250px', marginBottom: '20px'}}>Word of the Day</IonButton>
+
+          <IonButton expand="block" className='word-of-the-day'  style = {{height: '250px',marginBottom: '20px'}} routerLink={`/word-practice/${wordOfTheDay.toLocaleLowerCase()}`}>
+           {'Word of the Day: ' + wordOfTheDay}
+            </IonButton>
           <IonButton expand="block" className="small-button" style = {{height: '125px', marginBottom: '20px'}}routerLink='/grid' >Pronounce</IonButton>
         </div>
       </IonContent>
