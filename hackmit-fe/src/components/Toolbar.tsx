@@ -9,7 +9,7 @@ const Toolbar: React.FC<ToolbarProps> = ({ backButton = true }) => {
     return (
         <IonToolbar className='toolbar'>
             <div id='top-title-wrap'>
-                <IonButtons slot='start'>{backButton && <IonBackButton />}</IonButtons>
+                <IonButtons slot='start'>{backButton && <IonBackButton defaultHref='/' />}</IonButtons>
                 <IonTitle className='app-title'>I:PAL</IonTitle>
                 {/* <IonImg id='toolbar-logo' src={logo} alt='Phonify Logo' style={{ maxWidth: '70px', height: 'auto' }} /> */}
             </div>

@@ -25,7 +25,6 @@ const Words: React.FC = () => {
 
     useEffect(() => {
         const container = containerRef.current
-
         const handleScroll = () => {
             const cards = container?.getElementsByClassName('search-word-card')
             if (cards) {
@@ -80,7 +79,7 @@ const Words: React.FC = () => {
                     className='searchbar'
                     value={searchText}
                     onIonInput={(e: any) => setSearchText(e.target.value)}
-                    debounce={300}
+                    debounce={750}
                     placeholder='Search...'
                 />
 

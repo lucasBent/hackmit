@@ -58,17 +58,25 @@ const WordPractice: React.FC = () => {
             .replaceAll('*', '')
             .replaceAll('͡', '')
             .replaceAll('̩', '')
-        const schwaIndex = transcription.indexOf('ə')
-        if (
-            schwaIndex > -1 &&
-            transcription.length - 1 > schwaIndex &&
-            (transcription.indexOf('ɹ') === schwaIndex + 1 ||
-                transcription.indexOf('ɝ') === schwaIndex + 1 ||
-                transcription.indexOf('ɚ') === schwaIndex + 1)
-        )
-            transcription =
-                transcription.substring(0, schwaIndex) + 'ɚ' + transcription.substring(schwaIndex + 2, transcription.length)
+        ifThisFollowsThisThenReplaceWithThis('ə', 'ɹ', 'ɚ')
+        ifThisFollowsThisThenReplaceWithThis('ə', 'r', 'ɚ')
+        ifThisFollowsThisThenReplaceWithThis('ə', 'ɝ', 'ɚ')
+        ifThisFollowsThisThenReplaceWithThis('ə', 'ɚ', 'ɚ')
+        ifThisFollowsThisThenReplaceWithThis('ɚ', 'ɹ', 'ɚ')
+        ifThisFollowsThisThenReplaceWithThis('ɝ', 'ɹ', 'ɚ')
+        ifThisFollowsThisThenReplaceWithThis('ɚ', 'r', 'ɚ')
+        ifThisFollowsThisThenReplaceWithThis('ɝ', 'r', 'ɚ')
+
         return transcription
+
+        function ifThisFollowsThisThenReplaceWithThis(i1: string, i2: string, replacement: string) {
+            const i1Index = transcription.indexOf(i1)
+            if (i1Index > -1 && transcription.length - 1 > i1Index && transcription.indexOf(i2) === i1Index + 1)
+                transcription =
+                    transcription.substring(0, i1Index) +
+                    replacement +
+                    transcription.substring(i1Index + 2, transcription.length)
+        }
     }
 
     let sanitizedData: Word[] = []
@@ -151,7 +159,8 @@ const WordPractice: React.FC = () => {
                 theyAre('ɒ', 'ɔ') ||
                 theyAre('ɑ', 'ɔ') ||
                 theyAre('ɡ', 'ɡ') ||
-                theyAre('ɚ', 'r')
+                theyAre('ɚ', 'r') ||
+                theyAre('ɚ', 'ɹ')
             )
                 return true
             return false
@@ -198,13 +207,11 @@ const WordPractice: React.FC = () => {
                             <h2 className='transcription'>
                                 {sanitizedData.map(({ _id, ipa }: Word) => (
                                     <div key={_id} className='transcription-wrap'>
-                                        {' '}
                                         <Phrase phrase={ipa} />
                                     </div>
                                 ))}
                                 {attemptTranscription ? (
                                     <div key='attempt' className='transcription-wrap'>
-                                        {/* {attemptTranscription} */}
                                         <Phrase phrase={attemptTranscription} results={attemptResults} />
                                     </div>
                                 ) : (

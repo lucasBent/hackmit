@@ -19,7 +19,6 @@ const Char: React.FC<CharProps> = ({ char, result }) => {
     // Function to download, play and then delete the audio file using Blob URL
     const playAudio = async (syllable: string) => {
         setIsLoading(true)
-        console.log('hey')
         try {
             // Fetch the audio URL from your getAudio endpoint
             const result = await convex.query(api.audio.getAudio, { ipaChar: syllable })
