@@ -2,35 +2,11 @@ import React, { useState } from 'react'
 import { IonContent, IonHeader, IonPage, IonTitle, IonButton, IonGrid, IonRow, IonCol } from '@ionic/react'
 import './Grid.css'
 import './Home.css'
-import Toolbar from '../components/Toolbar.js'
-
-const syllables = [
-    //make these the actual IPA symbols
-
-    '/i:/',
-    '/ɪ/',
-    '/e/',
-    '/æ/',
-    '/ɑ:/',
-    '/ɔ:/',
-    '/ʊ/',
-    '/u:/',
-    '/p/',
-    '/b/',
-    '/t/',
-    '/d/',
-    '/k/',
-    '/g/',
-    '/f/',
-    '/v/',
-    '/θ/',
-    '/ð/',
-    '/s/',
-    '/z/',
-]
+import Toolbar from '../components/Toolbar'
+import syllables from './full_vocab_ipa';
 
 const Grid: React.FC = () => {
-    const [state, setState] = useState(0)
+    const [state, setState] = useState<number>(0);
 
     return (
         <IonPage>
@@ -60,7 +36,7 @@ const Grid: React.FC = () => {
                 </IonGrid>
             </IonContent>
         </IonPage>
-    )
+    );
 }
 
 export default Grid
