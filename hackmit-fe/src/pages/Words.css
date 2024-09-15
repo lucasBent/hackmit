@@ -1,56 +1,68 @@
-
-  .scrollable-vertical {
+.scrollable-vertical {
     display: flex;
     flex-direction: column;
     align-items: center;
     overflow-y: auto;
     height: 100%;
-    
-  }
-  
-  .word-of-the-day-card {
-    margin-bottom: 10px; 
-  /* background-image: url('./assets/button_bg.jpeg') ;
+
+}
+
+.word-of-the-day-card {
+    margin-bottom: 10px;
+    /* background-image: url('./assets/button_bg.jpeg') ;
     background-size: cover; 
     background-position: center; 
     background-repeat: no-repeat; */
-  }
-  .word-of-the-day {
-    
-    background-color: var(--ion-color-color9); 
-    font-size: 22px; 
+}
+
+.word-of-the-day {
+
+    background-color: var(--ion-color-color9);
+    font-size: 22px;
     height: 140px !important;
-    color: #000; 
+    color: #000;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-    border-radius: 12px; 
+    border-radius: 12px;
     padding: 10px;
-    display: flex; 
-    align-items: center; 
-    justify-content: center; 
-    text-align: center; 
-  }
-  
-  
-  
-  .word-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+
+
+.word-button {
     --background: var(--ion-color-color8);
     width: 100%;
     height: 90px;
-    border-radius: 15px; 
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
-    font-size: 18px; 
-  }
-  
-  .word-card {
-    
-    width: 90%; 
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    font-size: 18px;
+}
+
+.word-card {
+
+    width: 90%;
 
     transition: transform 0.3s, z-index 0.3s;
-  }
+}
 
-  .ion-searchbar {
-    --padding-start: 10px; 
-    --padding-end: 100px; 
-  }
-  
-  
+.ion-searchbar {
+    --padding-start: 10px;
+    --padding-end: 100px;
+}
+
+ion-searchbar {
+    --background: var(--ion-color-color6) !important;
+    box-shadow: none !important;
+}
+
+ion-searchbar input {
+    box-shadow: none !important;
+    height: 4rem !important;
+}
+
+ion-searchbar ion-icon {
+    top: 21px !important;
+}

@@ -41,6 +41,18 @@
     justify-content: center;
 }
 
+ion-header {
+    box-shadow: none !important;
+}
+
 #toolbar-logo {
     grid-column-start: 2;
+}
+
+ion-card {
+    box-shadow: none;
+}
+
+ion-button::part(native) {
+    box-shadow: none;
 }
