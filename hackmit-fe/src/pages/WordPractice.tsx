@@ -167,7 +167,7 @@ const WordPractice: React.FC = () => {
             </IonHeader>
             <IonContent fullscreen className='ion-padding' scrollY={false}>
                 <IonTitle className='page-title'>IPA Practice</IonTitle>
-                <IonTitle className='page-subtitle'>Tap the card to hear the pronunciation or record your voice to compare!</IonTitle>
+                <div className='page-desc'>Tap the card to hear the pronunciation or record your voice to compare!</div>
 
                 <IonCard className='word-card'>
                         <IonCardHeader>
@@ -203,7 +203,7 @@ const WordPractice: React.FC = () => {
                                     <LiveAudioVisualizer mediaRecorder={recorder.mediaRecorder} width={200} height={75} />
                                 )}
                             </IonCard>
-                            <IonButton id='record-button' shape='round' onClick={recordButtonPressed} disabled={!canRecord}>
+                            <IonButton id='record-button' shape='round' size='large' onClick={recordButtonPressed} disabled={!canRecord}>
                                 <IonIcon icon={recording ? stopOutline : mic}></IonIcon>
                             </IonButton>
                         </div>

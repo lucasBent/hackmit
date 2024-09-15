@@ -27,7 +27,7 @@ const Words: React.FC = () => {
         const container = containerRef.current
 
         const handleScroll = () => {
-            const cards = container?.getElementsByClassName('word-card')
+            const cards = container?.getElementsByClassName('search-word-card')
             if (cards) {
                 const containerHeight = container!.offsetHeight
                 const middle = (containerHeight * 2) / 3
@@ -86,7 +86,7 @@ const Words: React.FC = () => {
 
                 <div className='scrollable-vertical' ref={containerRef}>
                     {displayedWords.map((word: any, index: any) => (
-                        <div key={index} className='word-card'>
+                        <div key={index} className='search-word-card'>
                             <IonCard
                                 className='word-button'
                                 // style={{ '--background': colorClasses[index % colorClasses.length] }}
