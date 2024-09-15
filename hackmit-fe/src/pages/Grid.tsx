@@ -6,14 +6,12 @@ import logo from '../assets/nobg.png';
 
 const syllables = [
   //make these the actual IPA symbols
-  "/ˈsɪl.ə.bəl/", "/ˈɪ.pə/", "/ˈðæt/", "/ˈwɒt/", 
-  "/ˈsɪl.ə.bəl/", "/ˈɪ.pə/", "/ˈðæt/", "/ˈwɒt/", 
-  "/ˈtæb/", "/ˈkæd/", "/ˈtʃɪk/", "/ˈʃɪp/", 
-  "/ˈæp/", "/ˈɪk/", "/ˈlæb/", "/ˈpæp/",
-  "/ˈsɪl.ə.bəl/", "/ˈɪ.pə/", "/ˈðæt/", "/ˈwɒt/", 
-  "/ˈsɪl.ə.bəl/", "/ˈɪ.pə/", "/ˈðæt/", "/ˈwɒt/", 
-  "/ˈtæb/", "/ˈkæd/", "/ˈtʃɪk/", "/ˈʃɪp/", 
-  "/ˈæp/", "/ˈɪk/", "/ˈlæb/", "/ˈpæp/"
+
+  "/i:/", "/ɪ/", "/e/", "/æ/",
+  "/ɑ:/", "/ɔ:/", "/ʊ/", "/u:/",
+  "/p/", "/b/", "/t/", "/d/",
+  "/k/", "/g/", "/f/", "/v/",
+  "/θ/", "/ð/", "/s/", "/z/",
 ];
 
 const Grid: React.FC = () => {
@@ -22,14 +20,15 @@ const Grid: React.FC = () => {
   return (
     <IonPage>
       <IonHeader>
-      <IonButtons slot="start">
+      
+        <IonToolbar className = "toolbar">
+        <IonButtons slot="start">
           <IonBackButton text="<" icon="" defaultHref="/" />
         </IonButtons>
-        <IonToolbar className = "toolbar">
         <img
         src={logo}
         alt="Phonify Logo"
-        style={{ maxWidth: '70px', height: 'auto' }}
+        className = "centered-logo"
       />
      </IonToolbar>
       </IonHeader>

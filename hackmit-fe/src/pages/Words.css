@@ -5,22 +5,32 @@
     align-items: center;
     overflow-y: auto;
     height: 100%;
+    
   }
   
   .word-of-the-day-card {
-    margin-bottom: 20px; 
+    margin-bottom: 10px; 
+  /* background-image: url('./assets/button_bg.jpeg') ;
+    background-size: cover; 
+    background-position: center; 
+    background-repeat: no-repeat; */
+  }
+  .word-of-the-day {
     
+    background-color: var(--ion-color-color9); 
+    font-size: 22px; 
+    height: 140px !important;
+    color: #000; 
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    border-radius: 12px; 
+    padding: 10px;
+    display: flex; 
+    align-items: center; 
+    justify-content: center; 
+    text-align: center; 
   }
   
-  .word-of-the-day {
-    background-image: radial-gradient(circle, #d1e7dd 20%, transparent 20%), radial-gradient(circle, transparent 20%, #d1e7dd 20%, #d1e7dd 30%, transparent 30%), radial-gradient(circle, transparent 30%, #d1e7dd 30%, #d1e7dd 40%, transparent 40%);
-
-    --background: var(--ion-color-color9); 
-    font-size: 22px; 
-    height: 110px !important;
-    
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-  }
+  
   
   .word-button {
     --background: var(--ion-color-color8);
@@ -42,4 +52,5 @@
     --padding-start: 10px; 
     --padding-end: 100px; 
   }
+  
   

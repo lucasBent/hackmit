@@ -43,14 +43,15 @@ const Temp: React.FC = () => {
   return (
     <IonPage>
      <IonHeader>
-     <IonButtons slot="start">
+     
+        <IonToolbar className = "toolbar">
+        <IonButtons slot="start">
           <IonBackButton text="<" icon="" defaultHref="/" />
         </IonButtons>
-        <IonToolbar className = "toolbar">
         <img
         src={logo}
         alt="Phonify Logo"
-        style={{ maxWidth: '70px', height: 'auto' }}
+        className = "centered-logo"
       />
      </IonToolbar>
       </IonHeader>

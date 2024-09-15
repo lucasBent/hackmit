@@ -33,7 +33,7 @@ const Home: React.FC = () => {
         <img
         src={logo}
         alt="Phonify Logo"
-        style={{ maxWidth: '70px', height: 'auto' }}
+        className = "centered-logo"
       />
      </IonToolbar>
       </IonHeader >
