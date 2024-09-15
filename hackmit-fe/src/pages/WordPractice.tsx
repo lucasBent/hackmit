@@ -56,6 +56,7 @@ const WordPractice: React.FC = () => {
             .replaceAll('ˌ', '')
             .replaceAll('*', '')
             .replaceAll('͡', '')
+            .replaceAll('̩', '')
         return transcription
     }
 
@@ -131,7 +132,16 @@ const WordPractice: React.FC = () => {
 
         function isMatch(c1: string, c2: string) {
             const chars = [c1, c2]
-            if (c1 === c2 || theyAre('ɝ', 'ɚ') || theyAre('ɹ', 'r') || theyAre('ɪ', 'ə') || theyAre('ɒ', 'ɔ')) return true
+            if (
+                c1 === c2 ||
+                theyAre('ɝ', 'ɚ') ||
+                theyAre('ɹ', 'r') ||
+                theyAre('ɪ', 'ə') ||
+                theyAre('ɒ', 'ɔ') ||
+                theyAre('ɑ', 'ɔ') ||
+                theyAre('ɡ', 'ɡ')
+            )
+                return true
             return false
 
             function theyAre(similar1: string, similar2: string) {
