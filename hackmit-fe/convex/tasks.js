@@ -34,6 +34,6 @@ export const searchWords = query({
             .take(100)
 
         const filterResults = results.filter((doc) => doc.word.startsWith(args.query) || doc.word === args.query)
-        return filterResults
+        return filterResults.map((filterResult) => filterResult.word)
     },
 })
