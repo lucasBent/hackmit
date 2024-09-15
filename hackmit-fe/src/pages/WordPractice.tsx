@@ -58,6 +58,16 @@ const WordPractice: React.FC = () => {
             .replaceAll('*', '')
             .replaceAll('͡', '')
             .replaceAll('̩', '')
+        const schwaIndex = transcription.indexOf('ə')
+        if (
+            schwaIndex > -1 &&
+            transcription.length - 1 > schwaIndex &&
+            (transcription.indexOf('ɹ') === schwaIndex + 1 ||
+                transcription.indexOf('ɝ') === schwaIndex + 1 ||
+                transcription.indexOf('ɚ') === schwaIndex + 1)
+        )
+            transcription =
+                transcription.substring(0, schwaIndex) + 'ɚ' + transcription.substring(schwaIndex + 2, transcription.length)
         return transcription
     }
 
