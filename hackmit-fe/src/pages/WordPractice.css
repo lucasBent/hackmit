@@ -5,66 +5,28 @@
     overflow-y: auto;
     height: 100%;
 }
-.page-subtitle{
-    font-size: 20px;
-    margin-top: 15%;
-    text-align: left;
-}
-.word-button {
-    --background: #EBD7FF;
-    width: 100%;
-    height: 90px;
-    border-radius: 15px;
-    box-shadow: none;
-    font-size: 18px;
-    color: var(--ion-color-color7);
-    margin: 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    font-family: Lora, Georgia, 'Times New Roman', Times, serif;
-    font-size: 2rem;
-}
 
 .word-card {
-    margin-top:20%;
-    margin-bottom:50%;
     text-align: center;
     width: inherit;
     transition: transform 0.3s, z-index 0.3s;
-    background-color: var(--ion-color-color4);
+    background-color: #EBD7FF;
     color: white;
-    border: 3px solid var(--ion-color-color4);  
-    border-radius: 10px; 
-    padding: 20px;
-  
+    border-radius: 1rem;
+    padding: 1rem;
 }
 
-ion-searchbar.searchbar {
-    margin-top: 20px;
-    --background: var(--ion-color-color6) !important;
-    box-shadow: none !important;
-    --placeholder-color: black !important;
-    width: 90%; 
-   
-}
-
-ion-searchbar input {
-    box-shadow: none !important;
-    height: 4rem !important;
-    border-radius: 1rem !important;
-}
-
-
-#bottom-bar-inner-wrap{
+#bottom-bar-inner-wrap {
     display: flex;
     align-items: center;
     justify-content: center;
     flex-wrap: wrap;
 }
-.record-button{
-    align-self: center;
+
+#record-button {
+    aspect-ratio: 1;
+    --background: #EBD7FF;
+    --color: var(--ion-color-color7);
 }
 
 .statusBar {

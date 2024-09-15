@@ -77,7 +77,6 @@ ion-content::part(scroll) {
     font-family: Lora, Georgia, 'Times New Roman', Times, serif;
     text-align: center;
     margin-top: 0.5rem;
-    margin-bottom: 0.5rem;
     font-size: 2rem;
 }
 
@@ -97,4 +96,12 @@ ion-content::part(scroll) {
 
 .scrollable-vertical .word-card:first-child {
     margin-top: 0.75rem;
+}
+
+.page-desc {
+    text-align: center;
+    margin-top: 3rem;
+    margin-bottom: 3rem;
+    font-size: 1.25rem;
+    font-weight: normal;
 }
