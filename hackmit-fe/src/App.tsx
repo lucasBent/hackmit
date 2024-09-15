@@ -5,6 +5,7 @@ import Home from './pages/Home'
 import Words from './pages/Words'
 import Grid from './pages/Grid'
 import Temp from './pages/Temp'
+import PlayGround from './pages/PlayGround'
 
 /* Core CSS required for Ionic components to work properly */
 import '@ionic/react/css/core.css'
@@ -61,6 +62,9 @@ const App: React.FC = () => (
                     </Route>
                     <Route exact path='/temp'>
                         <Temp />
+                    </Route>
+                    <Route exact path='/playground'>
+                        <PlayGround />
                     </Route>
                     <Route exact path='/'>
                         <Redirect to='/home' />
