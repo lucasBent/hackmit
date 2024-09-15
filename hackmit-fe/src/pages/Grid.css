@@ -1,0 +1,38 @@
+.back-box {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); 
+    grid-template-rows: repeat(5, 50px); 
+    gap: 5px; 
+    /* max-height: 550px; */
+    overflow-y: auto;
+    border: 5px solid var(--ion-color-color2);
+    scrollbar-width: none; 
+    -ms-overflow-style: none; 
+  }
+
+  .back-box::-webkit-scrollbar {
+    display: none; 
+  }
+  
+  .syllable-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    --background: var(--ion-color-color2);
+    color: var(--ion-color-color7);   
+    border: 2px solid var(--ion-color-color1);   
+    border-radius: 5px;
+    cursor: pointer;
+    /* PLS ROUND THE EDGES OF THE INNER BOX */
+    transition: background-color 0.3s;
+    font-size: 14px;
+    box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.2);
+    
+
+  }
+  
+  .syllable-button:hover {
+    background-color: var(--ion-color-color9);
+    color: var(--ion-color-color9);
+  }
+  
