@@ -83,3 +83,11 @@
 .practice-button::part(native) {
     border-radius: 1rem !important;
 }
+
+.soup-hint {
+    text-align: center;
+    font-size: 1rem;
+    font-family: Lora, Georgia, 'Times New Roman', Times, serif;
+    margin-top: 1rem;
+    transform: rotate(-0.5deg);
+}
