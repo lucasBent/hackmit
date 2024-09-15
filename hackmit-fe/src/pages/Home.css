@@ -2,3 +2,19 @@
     --background: var(--ion-color-color4);
     --color: var(--ion-color-color7);
   }
+
+  .word-of-the-day {
+    --background: var(--ion-color-color8);
+    --color: var(--ion-color-color7);
+
+    border: 10px solid var(--ion-color-color9); 
+    border-radius: 8px; 
+    box-sizing: border-box; 
+    outline-offset: 0;
+  }
+
+  .word-of-the-day {
+    background: var(--ion-color-color8);
+    
+  }
+  
