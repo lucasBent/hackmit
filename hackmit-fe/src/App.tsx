@@ -2,7 +2,6 @@ import { Redirect, Route } from 'react-router-dom'
 import { IonApp, IonRouterOutlet, setupIonicReact } from '@ionic/react'
 import { IonReactRouter } from '@ionic/react-router'
 import Home from './pages/Home'
-import WordPractice from './pages/WordPractice'
 import Words from './pages/Words'
 import Grid from './pages/Grid'
 import Temp from './pages/Temp'
@@ -37,6 +36,7 @@ import '@ionic/react/css/palettes/dark.system.css'
 /* Theme variables */
 import './theme/variables.css'
 import { ConvexProvider, ConvexReactClient } from 'convex/react'
+import WordPractice from './pages/WordPractice.js'
 
 setupIonicReact()
 
@@ -56,11 +56,11 @@ const App: React.FC = () => (
                     <Route exact path='/grid'>
                         <Grid />
                     </Route>
-                    <Route exact path='/temp'>
-                        <Temp />
-                    </Route>
                     <Route exact path='/word-practice/:word'>
                         <WordPractice />
+                    </Route>
+                    <Route exact path='/temp'>
+                        <Temp />
                     </Route>
                     <Route exact path='/'>
                         <Redirect to='/home' />

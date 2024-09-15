@@ -17,3 +17,20 @@
         --ion-text-color: var(--ion-color-color5);
     }
 }
+
+.toolbar{
+    text-align: center;
+}
+
+.title{
+    text-align: center ;
+    font-size: 20px;
+    margin-top: 10px;
+}
+.small-title{
+    text-align: center ;
+    font-size: 18px;
+    margin-top: 5px;
+    margin-bottom: 15px;
+
+}

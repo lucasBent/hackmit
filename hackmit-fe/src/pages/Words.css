@@ -9,10 +9,12 @@
   
   .word-of-the-day-card {
     margin-bottom: 20px; 
+    
   }
   
   .word-of-the-day {
-    
+    background-image: radial-gradient(circle, #d1e7dd 20%, transparent 20%), radial-gradient(circle, transparent 20%, #d1e7dd 20%, #d1e7dd 30%, transparent 30%), radial-gradient(circle, transparent 30%, #d1e7dd 30%, #d1e7dd 40%, transparent 40%);
+
     --background: var(--ion-color-color9); 
     font-size: 22px; 
     height: 110px !important;
@@ -23,7 +25,6 @@
   .word-button {
     --background: var(--ion-color-color8);
     width: 100%;
-
     height: 90px;
     border-radius: 15px; 
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 

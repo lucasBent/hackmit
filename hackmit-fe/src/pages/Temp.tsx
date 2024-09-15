@@ -1,4 +1,4 @@
-import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar } from '@ionic/react';
+import { IonButtons, IonBackButton, IonContent, IonHeader, IonPage, IonTitle, IonToolbar } from '@ionic/react';
 import { IonCard, IonCardContent, IonCardHeader, IonCardSubtitle, IonCardTitle, IonFooter } from '@ionic/react';
 import { IonButton, IonIcon } from '@ionic/react';
 import {mic, play, refreshCircleOutline, micOutline, stopCircleOutline} from 'ionicons/icons'
@@ -42,25 +42,26 @@ const Temp: React.FC = () => {
   };
   return (
     <IonPage>
-      <IonHeader>
-        <IonToolbar>
-          <div style={{ textAlign: 'center' }}>
-            <img
-              src={logo}
-              alt="Phonify Logo"
-              style={{ maxWidth: '70px', height: 'auto' }}
-            />
-          </div>
-        </IonToolbar>
+     <IonHeader>
+     <IonButtons slot="start">
+          <IonBackButton text="<" icon="" defaultHref="/" />
+        </IonButtons>
+        <IonToolbar className = "toolbar">
+        <img
+        src={logo}
+        alt="Phonify Logo"
+        style={{ maxWidth: '70px', height: 'auto' }}
+      />
+     </IonToolbar>
       </IonHeader>
 
       <IonContent fullscreen className="ion-padding">
         
-        <IonTitle className = "title" style={{ textAlign: 'center', fontSize: '20px', marginTop: '10px', marginBottom: '5px' }}>
+        <IonTitle className = "title">
             {/*make this better*/}
           {"Tap a card to hear!"}
         </IonTitle>
-        <IonTitle style={{ textAlign: 'center', fontSize: '16px', marginBottom: '30px' }}>
+        <IonTitle className="small-title">
           {"Or, record your voice for feedback:"}
         </IonTitle>
 

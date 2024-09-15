@@ -10,6 +10,7 @@ import { api } from '../../convex/_generated/api.js'
 import { Word } from '../type/Word.js'
 import { VoiceRecorder } from 'capacitor-voice-recorder'
 import backend from '../util/Backend.js'
+import Phrase from '../components/Phrase.js'
 
 interface WordPracticeParams {
     word: string
@@ -35,7 +36,7 @@ const WordPractice: React.FC = () => {
     }
 
     function cleanTranscription(transcription: string) {
-        transcription = transcription.replaceAll(' ', '').replaceAll('ˈ', '')
+        transcription = transcription.replaceAll(' ', '').replaceAll('ˈ', '').replaceAll('ː', '').replaceAll('ˌ', '')
         return transcription
     }
 
@@ -47,12 +48,15 @@ const WordPractice: React.FC = () => {
     const [canRecord, setCanRecord] = useState(false)
     const [recording, setRecording] = useState(false)
     const [attemptTranscription, setAttemptTranscription] = useState('')
+    const [hasRecorded, setHasRecorded] = useState(false)
+    const [attemptResults, setAttemptResults] = useState<string[]>([])
 
     async function recordButtonPressed() {
         if (!recording) {
             setRecording(true)
             const tryRecording = await VoiceRecorder.startRecording()
         } else {
+            setHasRecorded(true)
             setRecording(false)
             setAttemptTranscription('')
             const getRecording = await VoiceRecorder.stopRecording()
@@ -67,6 +71,52 @@ const WordPractice: React.FC = () => {
     useEffect(() => {
         checkIfCanRecord()
     }, [])
+
+    useEffect(() => {
+        setAttemptResults(getResultsForAttempt(sanitizedData, attemptTranscription))
+    }, [attemptTranscription])
+
+    function getResultsForAttempt(entries: Word[], attemptTranscription: string) {
+        for (const entry of entries) {
+            entry.comparison = compareTranscription(entry.ipa, attemptTranscription)
+            if (!entry.comparison.length) {
+                const successfulResult = []
+                for (let i = 0; i < attemptTranscription.length; i++) successfulResult.push('definitely-correct')
+                return successfulResult
+            }
+        }
+
+        const comps: number[][] = []
+        for (const entry of sanitizedData) if (entry.comparison) comps.push(entry.comparison)
+
+        const attemptResults = []
+        for (let i = 0; i < attemptTranscription.length; i++) {
+            let errors = 0
+            for (const comp of comps) if (comp.includes(i)) errors++
+            if (errors === comps.length) attemptResults.push('not-correct')
+            else if (errors > 0) attemptResults.push('maybe-correct')
+            else attemptResults.push('definitely-correct')
+        }
+        return attemptResults
+
+        function compareTranscription(entry: string, attempt: string) {
+            const wrongIndices: number[] = []
+            for (let i = 0; i < Math.max(entry.length, attempt.length); i++) {
+                if (i > entry.length || i > attempt.length || !isMatch(entry[i], attempt[i])) wrongIndices.push(i)
+            }
+            return wrongIndices
+        }
+
+        function isMatch(c1: string, c2: string) {
+            const chars = [c1, c2]
+            if (c1 === c2 || theyAre('ɝ', 'ɚ') || theyAre('ɹ', 'r') || theyAre('ɪ', 'ə')) return true
+            return false
+
+            function theyAre(similar1: string, similar2: string) {
+                return chars.includes(similar1) && chars.includes(similar2)
+            }
+        }
+    }
 
     async function checkIfCanRecord() {
         const canRecord = await VoiceRecorder.canDeviceVoiceRecord()
@@ -100,12 +150,18 @@ const WordPractice: React.FC = () => {
                             {wordData ? (
                                 <h2 className='transcription'>
                                     {sanitizedData.map(({ _id, ipa }: Word) => (
-                                        <div key={_id}>/{ipa}/</div>
+                                        <div key={_id}>
+                                            {' '}
+                                            <Phrase phrase={ipa} />
+                                        </div>
                                     ))}
                                     {attemptTranscription ? (
-                                        <div key='attempt'>/{attemptTranscription}/</div>
+                                        <div key='attempt'>
+                                            {/* {attemptTranscription} */}
+                                            <Phrase phrase={attemptTranscription} results={attemptResults} />
+                                        </div>
                                     ) : (
-                                        <IonSpinner />
+                                        hasRecorded && <IonSpinner />
                                     )}
                                 </h2>
                             ) : (
