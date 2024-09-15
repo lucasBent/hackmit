@@ -36,6 +36,7 @@ import '@ionic/react/css/palettes/dark.system.css'
 /* Theme variables */
 import './theme/variables.css'
 import { ConvexProvider, ConvexReactClient } from 'convex/react'
+import WordPractice from './pages/WordPractice.js'
 
 setupIonicReact()
 
@@ -54,6 +55,9 @@ const App: React.FC = () => (
                     </Route>
                     <Route exact path='/grid'>
                         <Grid />
+                    </Route>
+                    <Route exact path='/word-practice/:word'>
+                        <WordPractice />
                     </Route>
                     <Route exact path='/temp'>
                         <Temp />
