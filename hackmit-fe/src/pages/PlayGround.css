@@ -85,6 +85,10 @@
     
 }
 
+.big-practice {
+    --background: linear-gradient(90deg, #948af9, #bba7ff, #80b4f7) !important;
+}
+
 .practice-button::part(native) {
     border-radius: 1rem !important;
 }
@@ -96,7 +100,7 @@
 
 .soup-image {
     margin-top: 1rem;
-    width: 5rem;
+    width: 5.5rem;
     height: auto;
 }
 

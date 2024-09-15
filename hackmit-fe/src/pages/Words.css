@@ -26,6 +26,9 @@
     font-family: Lora, Georgia, 'Times New Roman', Times, serif;
     font-size: 2rem;
 }
+.word-button:hover {
+    --background: #d1abf7;
+}
 
 .search-word-card {
     width: 90%;
