@@ -141,22 +141,9 @@ const PlayGround: React.FC = () => {
                         </ul>
                     </div>
                 )}
-                {searchText && (
-                    <div className='search-results-row' ref={containerRef}>
-                        {displayedWords.map((word: any, index: any) => (
-                            <div key={index} className='small-word-card' onClick={() => handleAddWord(word)}>
-                                <span className={`word-text ${word.length > 10 ? 'long' : ''}`}>{word}</span>
-                            </div>
-                        ))}
-                    </div>
-                )}
+               
 
-                <IonSearchbar
-                    className='searchbar'
-                    value={searchText}
-                    onIonInput={(e: any) => setSearchText(e.target.value)}
-                    debounce={300}
-                />
+              
                 {selectedWords.length === 0 && searchText.length === 0 && (
                     <div className='soup-hint'>Start typing to find inspo words for a new sentence ☝️</div>
                 )}
