@@ -136,7 +136,7 @@ const PlayGround: React.FC = () => {
                     onIonInput={(e: any) => setSearchText(e.target.value)}
                     debounce={300}
                 />
-                {selectedWords.length === 0 && (
+                {selectedWords.length === 0 && searchText.length === 0 && (
                     <div className='soup-hint'>Start typing to find inspo words for a new sentence ☝️</div>
                 )}
             </IonContent>
