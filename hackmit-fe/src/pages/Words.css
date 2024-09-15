@@ -7,44 +7,25 @@
 
 }
 
-.word-of-the-day-card {
-    margin-bottom: 10px;
-    /* background-image: url('./assets/button_bg.jpeg') ;
-    background-size: cover; 
-    background-position: center; 
-    background-repeat: no-repeat; */
-}
-
-.word-of-the-day {
-
-    background-color: var(--ion-color-color9);
-    font-size: 22px;
-    height: 140px !important;
-    color: #000;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-    border-radius: 12px;
-    padding: 10px;
+.word-button {
+    --background: #EBD7FF;
+    width: 100%;
+    height: 90px;
+    border-radius: 15px;
+    box-shadow: none;
+    font-size: 18px;
+    color: var(--ion-color-color7);
+    margin: 0;
     display: flex;
     align-items: center;
     justify-content: center;
     text-align: center;
-}
-
-
-
-.word-button {
-    --background: var(--ion-color-color8);
-    width: 100%;
-    height: 90px;
-    border-radius: 15px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    font-size: 18px;
+    font-family: Lora, Georgia, 'Times New Roman', Times, serif;
+    font-size: 2rem;
 }
 
 .word-card {
-
     width: 90%;
-
     transition: transform 0.3s, z-index 0.3s;
 }
 
@@ -53,14 +34,17 @@
     --padding-end: 100px;
 }
 
-ion-searchbar {
+ion-searchbar.searchbar {
     --background: var(--ion-color-color6) !important;
     box-shadow: none !important;
+    --placeholder-color: black !important;
+    padding: 0 1rem;
 }
 
 ion-searchbar input {
     box-shadow: none !important;
     height: 4rem !important;
+    border-radius: 1rem !important;
 }
 
 ion-searchbar ion-icon {

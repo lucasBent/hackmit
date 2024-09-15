@@ -1,20 +1,11 @@
-import {
-    IonContent,
-    IonHeader,
-    IonPage,
-    IonToolbar,
-    IonButton,
-    IonButtons,
-    IonTitle,
-    IonSearchbar,
-    IonBackButton,
-} from '@ionic/react'
+import { IonContent, IonHeader, IonPage, IonButton, IonTitle, IonSearchbar, IonCard } from '@ionic/react'
 import React, { useRef, useEffect, useState } from 'react'
 import './Words.css'
 import '../theme/variables.css'
-import logo from '../assets/nobg.png'
 import { api } from '../../convex/_generated/api.js'
 import { useQuery } from 'convex/react'
+import Toolbar from '../components/Toolbar.js'
+import { Word } from '../type/Word.js'
 
 const Words: React.FC = () => {
     const [searchText, setSearchText] = useState<string>('') // Search text state
@@ -29,8 +20,6 @@ const Words: React.FC = () => {
         'var(--ion-color-color8)',
         'var(--ion-color-color9)',
     ]
-
-    const wordOfTheDay = 'Technology'
 
     const containerRef = useRef<HTMLDivElement>(null)
 
@@ -58,6 +47,7 @@ const Words: React.FC = () => {
         }
 
         container?.addEventListener('scroll', handleScroll)
+        setTimeout(() => document.querySelector('.scrollable-vertical')?.scrollTo(0, 1), 200)
 
         return () => {
             container?.removeEventListener('scroll', handleScroll)
@@ -65,42 +55,45 @@ const Words: React.FC = () => {
     }, [])
 
     // Choose which words to display (searched or fetched)
-    const displayedWords = searchText && filteredWords ? filteredWords : fetchedWords || [] // Add a fallback for null
+    let displayedWords = searchText && filteredWords ? filteredWords : fetchedWords || [] // Add a fallback for null
+
+    displayedWords = uniquifyEntries(displayedWords)
+
+    function uniquifyEntries(entries: string[]) {
+        var seenHits: Record<string, boolean> = {}
+        return entries.filter((entry) => {
+            var k = entry
+            return seenHits.hasOwnProperty(k) ? false : (seenHits[k] = true)
+        })
+    }
 
     return (
         <IonPage>
             <IonHeader>
-                <IonButtons slot='start'>
-                    <IonBackButton text='<' icon='' defaultHref='/' />
-                </IonButtons>
-
-                <IonToolbar className='toolbar'>
-                    <img src={logo} alt='Phonify Logo' style={{ maxWidth: '70px', height: 'auto' }} />
-                </IonToolbar>
+                <Toolbar />
             </IonHeader>
             <IonContent fullscreen className='ion-padding' scrollY={false}>
-                <IonTitle className='title'>{'Choose a word to learn!'}</IonTitle>
-                <IonTitle className='small-title'>{'Or, search a word below:'}</IonTitle>
+                <IonTitle className='page-title'>Dictionary</IonTitle>
+                <IonTitle className='page-subtitle'>Search or tap on a word.</IonTitle>
 
-                <IonSearchbar value={searchText} onIonInput={(e: any) => setSearchText(e.target.value)} debounce={300} />
-
-                <div className='word-of-the-day-card'>
-                    <IonButton className='word-of-the-day word-button ' expand='block'  routerLink={`/word-practice/${wordOfTheDay.toLocaleLowerCase()}`}>
-                        {'Word of the Day: ' + wordOfTheDay}
-                    </IonButton>
-                </div>
+                <IonSearchbar
+                    className='searchbar'
+                    value={searchText}
+                    onIonInput={(e: any) => setSearchText(e.target.value)}
+                    debounce={300}
+                    placeholder='Search...'
+                />
 
                 <div className='scrollable-vertical' ref={containerRef}>
                     {displayedWords.map((word: any, index: any) => (
                         <div key={index} className='word-card'>
-                            <IonButton
+                            <IonCard
                                 className='word-button'
-                                expand='block'
-                                style={{ '--background': colorClasses[index % colorClasses.length] }}
+                                // style={{ '--background': colorClasses[index % colorClasses.length] }}
                                 routerLink={`/word-practice/${word.toLocaleLowerCase()}`}
                             >
-                                {word}
-                            </IonButton>
+                                {word.toLocaleLowerCase()}
+                            </IonCard>
                         </div>
                     ))}
                 </div>

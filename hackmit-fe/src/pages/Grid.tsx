@@ -3,11 +3,9 @@ import { IonContent, IonHeader, IonPage, IonTitle, IonButton, IonGrid, IonRow, I
 import './Grid.css'
 import './Home.css'
 import Toolbar from '../components/Toolbar'
-import syllables from './full_vocab_ipa';
+import syllables from './full_vocab_ipa'
 
 const Grid: React.FC = () => {
-    const [state, setState] = useState<number>(0);
-
     return (
         <IonPage>
             <IonHeader>
@@ -15,19 +13,14 @@ const Grid: React.FC = () => {
             </IonHeader>
 
             <IonContent fullscreen className='ion-padding'>
-                <IonTitle className='title'>{'IPA Alphabet'}</IonTitle>
-                <IonTitle className='small-title'>{'Tap an IPA syllable to learn it:'}</IonTitle>
+                <IonTitle className='page-title'>IPA Reference</IonTitle>
+                <IonTitle className='page-subtitle'>Tap on a character to hear it.</IonTitle>
 
                 <IonGrid>
                     <IonRow>
                         {syllables.map((syllable, index) => (
-                            <IonCol size='4' key={index}>
-                                <IonButton
-                                    className='syllable-button'
-                                    expand='full'
-                                    onClick={() => setState(index)}
-                                    routerLink='/temp'
-                                >
+                            <IonCol size='3' key={index}>
+                                <IonButton className='syllable-button' expand='full' routerLink='/word-practice/sorry'>
                                     {syllable}
                                 </IonButton>
                             </IonCol>
@@ -36,7 +29,7 @@ const Grid: React.FC = () => {
                 </IonGrid>
             </IonContent>
         </IonPage>
-    );
+    )
 }
 
 export default Grid
