@@ -11,7 +11,7 @@ import Toolbar from '../components/Toolbar.js'
 
 // Initialize OpenAI API
 const openai = new OpenAIApi({
-    apiKey: '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',
+    apiKey: import.meta.env.VITE_OPENAI_API_KEY,
     dangerouslyAllowBrowser: true,
 })
 
