@@ -15,10 +15,9 @@ import '../theme/variables.css'
 import logo from '../assets/nobg.png'
 import { api } from '../../convex/_generated/api.js'
 import { useQuery } from 'convex/react'
-import Toolbar from '../components/Toolbar.js'
 
 const Words: React.FC = () => {
-    const [searchText, setSearchText] = useState<string>('word') // Search text state
+    const [searchText, setSearchText] = useState<string>('') // Search text state
 
     // Fetching the words based on the search text using `useQuery`
     const fetchedWords = useQuery(api.tasks.getWords, {}) // Fetch initial words without search
@@ -71,7 +70,13 @@ const Words: React.FC = () => {
     return (
         <IonPage>
             <IonHeader>
-                <Toolbar />
+                <IonButtons slot='start'>
+                    <IonBackButton text='<' icon='' defaultHref='/' />
+                </IonButtons>
+
+                <IonToolbar className='toolbar'>
+                    <img src={logo} alt='Phonify Logo' style={{ maxWidth: '70px', height: 'auto' }} />
+                </IonToolbar>
             </IonHeader>
             <IonContent fullscreen className='ion-padding' scrollY={false}>
                 <IonTitle className='title'>{'Choose a word to learn!'}</IonTitle>
@@ -80,7 +85,7 @@ const Words: React.FC = () => {
                 <IonSearchbar value={searchText} onIonInput={(e: any) => setSearchText(e.target.value)} debounce={300} />
 
                 <div className='word-of-the-day-card'>
-                    <IonButton className='word-of-the-day word-button ' expand='block'>
+                    <IonButton className='word-of-the-day word-button ' expand='block'  routerLink={`/word-practice/${wordOfTheDay.toLocaleLowerCase()}`}>
                         {'Word of the Day: ' + wordOfTheDay}
                     </IonButton>
                 </div>
