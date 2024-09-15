@@ -15,6 +15,7 @@ import type {
   FilterApi,
   FunctionReference,
 } from "convex/server";
+import type * as ipaCompare from "../ipaCompare.js";
 import type * as tasks from "../tasks.js";
 
 /**
@@ -26,6 +27,7 @@ import type * as tasks from "../tasks.js";
  * ```
  */
 declare const fullApi: ApiFromModules<{
+  ipaCompare: typeof ipaCompare;
   tasks: typeof tasks;
 }>;
 export declare const api: FilterApi<

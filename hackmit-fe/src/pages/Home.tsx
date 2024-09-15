@@ -1,8 +1,8 @@
 import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar, IonButton, IonButtons } from '@ionic/react';
 import ExploreContainer from '../components/ExploreContainer';
-import './Home.css';
 import '../theme/variables.css';
 import logo from '../assets/nobg.png';
+import './Home.css';
 
 const Home: React.FC = () => {
 
@@ -28,24 +28,22 @@ const Home: React.FC = () => {
   
   return (
     <IonPage>
-      <IonHeader >
-        <IonToolbar>
-        <div style={{ textAlign: 'center' }}>
-          <img
-            src= {logo}
-            alt = "Phonify Logo"
-            style={{ maxWidth: '70px', height: 'auto'}} 
-          />
-        </div>
-        </IonToolbar>
+      <IonHeader>
+        <IonToolbar className = "toolbar">
+        <img
+        src={logo}
+        alt="Phonify Logo"
+        style={{ maxWidth: '70px', height: 'auto' }}
+      />
+     </IonToolbar>
       </IonHeader >
       <IonContent fullscreen className="ion-padding">
-        <IonTitle style = {{textAlign: 'center', fontSize: '20px', marginTop: '10px', marginBottom: '5px'}}>{getGreeting()}</IonTitle>
-        <IonTitle style = {{textAlign: 'center', fontSize: '16px', marginBottom: '30px'}}>{getRandomMessage()}</IonTitle>
+        <IonTitle className = "title">{getGreeting()}</IonTitle>
+        <IonTitle className = "small-title">{getRandomMessage()}</IonTitle>
         <div className="button-container">
           <IonButton expand="block" className="small-button" style = {{height: '125px', marginBottom: '20px'}} routerLink='/words'>Learn</IonButton>
           <IonButton expand="block" className="small-button" style = {{height: '250px', marginBottom: '20px'}}>Word of the Day</IonButton>
-          <IonButton expand="block" className="small-button" style = {{height: '125px', marginBottom: '20px'}}>Pronounce</IonButton>
+          <IonButton expand="block" className="small-button" style = {{height: '125px', marginBottom: '20px'}}routerLink='/grid' >Pronounce</IonButton>
         </div>
       </IonContent>
     </IonPage>
@@ -53,3 +51,5 @@ const Home: React.FC = () => {
 };
 
 export default Home;
+
+
