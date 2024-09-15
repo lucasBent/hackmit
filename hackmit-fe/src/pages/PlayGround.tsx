@@ -41,7 +41,7 @@ const PlayGround: React.FC = () => {
 
     const generatePhrase = async () => {
         const words = selectedWords.map((w) => w.word).join(', ')
-        const prompt = `Generate a simple sentence using the following words: ${words}. The sentence should be short and use each word at least once.`
+        const prompt = `Generate the shortest sentence possible using the following words at least once each: ${words}. Make sure it is a full sentence though.`
 
         console.log('Generating phrase with prompt:', prompt) // Debugging line
 
@@ -83,6 +83,31 @@ const PlayGround: React.FC = () => {
                 <Toolbar />
             </IonHeader>
             <IonContent fullscreen className='ion-padding' scrollY={false}>
+            <IonTitle className='page-title'>Word Soup</IonTitle>
+                <IonTitle className='page-subtitle' style = {{fontSize: "18px"}}>Search for words to practice!</IonTitle>
+
+
+
+            
+
+                <IonSearchbar
+                    className='searchbar'
+                    value={searchText}
+                    onIonInput={(e: any) => setSearchText(e.target.value)}
+                    debounce={300}
+                />
+
+{searchText && (
+                    <div className='search-results-row' ref={containerRef}>
+                        {displayedWords.map((word: any, index: any) => (
+                            <div key={index} className='small-word-card' onClick={() => handleAddWord(word)}>
+                                <span className={`word-text ${word.length > 10 ? 'long' : ''}`}>{word}</span>
+                            </div>
+                        ))}
+                    </div>
+                )}
+
+             
                 {selectedWords.length > 0 && (
                     <div className='practice-now-container'>
                         <IonButton className='practice-button' expand='full' onClick={generatePhrase}>
@@ -91,14 +116,11 @@ const PlayGround: React.FC = () => {
                     </div>
                 )}
 
-                {phrase && (
-                    <div className='phrase-container'>
-                        <IonTitle className='small-title'>Generated Phrase:</IonTitle>
-                        <p>{phrase}</p>
-                    </div>
-                )}
+<div className = 'image-container'>
+                <img src='src/assets/soup.webp' className='soup-image' />
+                </div>
 
-                {selectedWords.length > 0 && (
+{selectedWords.length > 0 && (
                     <div className='selected-words'>
                         <IonTitle className='selected-words-title'>Selected Words:</IonTitle>
                         <ul className='no-bullets'>
@@ -119,23 +141,6 @@ const PlayGround: React.FC = () => {
                         </ul>
                     </div>
                 )}
-
-                {searchText && (
-                    <div className='search-results-row' ref={containerRef}>
-                        {displayedWords.map((word: any, index: any) => (
-                            <div key={index} className='small-word-card' onClick={() => handleAddWord(word)}>
-                                <span className={`word-text ${word.length > 10 ? 'long' : ''}`}>{word}</span>
-                            </div>
-                        ))}
-                    </div>
-                )}
-
-                <IonSearchbar
-                    className='searchbar'
-                    value={searchText}
-                    onIonInput={(e: any) => setSearchText(e.target.value)}
-                    debounce={300}
-                />
             </IonContent>
         </IonPage>
     )
