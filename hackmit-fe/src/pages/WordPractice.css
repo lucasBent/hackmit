@@ -12,6 +12,11 @@
     --background: #4D8373;
     width: 6rem;
     margin: 0;
+    box-shadow: none;
+}
+
+ion-button#record-button::part(native) {
+    box-shadow: none;
 }
 
 .back-box {
@@ -33,6 +38,7 @@
     width: 100%;
     margin: 0;
     margin-right: 0.5rem;
+    box-shadow: none;
 }
 
 .word-practice-card {
