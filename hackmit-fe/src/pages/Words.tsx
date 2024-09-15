@@ -1,20 +1,11 @@
-import {
-    IonContent,
-    IonHeader,
-    IonPage,
-    IonToolbar,
-    IonButton,
-    IonButtons,
-    IonTitle,
-    IonSearchbar,
-    IonBackButton,
-} from '@ionic/react'
+import { IonContent, IonHeader, IonPage, IonButton, IonTitle, IonSearchbar } from '@ionic/react'
 import React, { useRef, useEffect, useState } from 'react'
 import './Words.css'
 import '../theme/variables.css'
-import logo from '../assets/nobg.png'
 import { api } from '../../convex/_generated/api.js'
 import { useQuery } from 'convex/react'
+import Toolbar from '../components/Toolbar.js'
+import { Word } from '../type/Word.js'
 
 const Words: React.FC = () => {
     const [searchText, setSearchText] = useState<string>('') // Search text state
@@ -29,7 +20,6 @@ const Words: React.FC = () => {
         'var(--ion-color-color8)',
         'var(--ion-color-color9)',
     ]
-
 
     const containerRef = useRef<HTMLDivElement>(null)
 
@@ -64,18 +54,22 @@ const Words: React.FC = () => {
     }, [])
 
     // Choose which words to display (searched or fetched)
-    const displayedWords = searchText && filteredWords ? filteredWords : fetchedWords || [] // Add a fallback for null
+    let displayedWords = searchText && filteredWords ? filteredWords : fetchedWords || [] // Add a fallback for null
+
+    displayedWords = uniquifyEntries(displayedWords)
+
+    function uniquifyEntries(entries: string[]) {
+        var seenHits: Record<string, boolean> = {}
+        return entries.filter((entry) => {
+            var k = entry
+            return seenHits.hasOwnProperty(k) ? false : (seenHits[k] = true)
+        })
+    }
 
     return (
         <IonPage>
             <IonHeader>
-                <IonButtons slot='start'>
-                    <IonBackButton text='<' icon='' defaultHref='/' />
-                </IonButtons>
-
-                <IonToolbar className='toolbar'>
-                    <img src={logo} alt='Phonify Logo' style={{ maxWidth: '70px', height: 'auto' }} />
-                </IonToolbar>
+                <Toolbar />
             </IonHeader>
             <IonContent fullscreen className='ion-padding' scrollY={false}>
                 <IonTitle className='title'>{'Choose a word to learn!'}</IonTitle>
