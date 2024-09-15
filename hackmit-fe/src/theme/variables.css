@@ -1,5 +1,16 @@
 @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap');
 
+@font-face {
+    font-family: Lora;
+    src: url(/fonts/Lora-VariableFont_wght.ttf);
+}
+
+@font-face {
+    font-family: Lora;
+    font-style: italic;
+    src: url(/fonts/Lora-Italic-VariableFont_wght.ttf);
+}
+
 :root {
     --ion-color-color1: #4D8373;
     --ion-color-color2: #BFC9BD;
@@ -11,7 +22,7 @@
     --ion-color-color8: #F3958B;
     --ion-color-color9: #F5835C;
 
-    --ion-background-color: var(--ion-color-color5);
+    --ion-background-color: #F6EFDD;
     --ion-text-color: var(--ion-color-color7);
 
     [theme="dark"] {
@@ -56,4 +67,30 @@ ion-card {
 
 ion-button::part(native) {
     box-shadow: none;
+}
+
+.page-title {
+    font-family: Lora, Georgia, 'Times New Roman', Times, serif;
+    text-align: center;
+    margin-top: 0;
+    margin-bottom: 0.5rem;
+    font-size: 2rem;
+}
+
+.page-subtitle {
+    text-align: center;
+    margin-top: 0;
+    margin-bottom: 1rem;
+    font-size: 1.25rem;
+    font-weight: normal;
+}
+
+.app-title {
+    font-weight: normal;
+    text-align: center;
+    margin-bottom: 0.5rem;
+}
+
+.scrollable-vertical .word-card:first-child {
+    margin-top: 0.75rem;
 }

@@ -1,4 +1,4 @@
-import { IonContent, IonHeader, IonPage, IonButton, IonTitle, IonSearchbar } from '@ionic/react'
+import { IonContent, IonHeader, IonPage, IonButton, IonTitle, IonSearchbar, IonCard } from '@ionic/react'
 import React, { useRef, useEffect, useState } from 'react'
 import './Words.css'
 import '../theme/variables.css'
@@ -72,22 +72,22 @@ const Words: React.FC = () => {
                 <Toolbar />
             </IonHeader>
             <IonContent fullscreen className='ion-padding' scrollY={false}>
-                <IonTitle className='title'>{'Choose a word to learn!'}</IonTitle>
-                <IonTitle className='small-title'>{'Or, search a word below:'}</IonTitle>
+            <IonTitle className='app-title'>I:PAL</IonTitle>
+                <IonTitle className='page-title'>Dictionary</IonTitle>
+                <IonTitle className='page-subtitle'>Search or tap on a word.</IonTitle>
 
-                <IonSearchbar value={searchText} onIonInput={(e: any) => setSearchText(e.target.value)} debounce={300} />
+                <IonSearchbar className='searchbar' value={searchText} onIonInput={(e: any) => setSearchText(e.target.value)} debounce={300} placeholder='Search...'/>
 
                 <div className='scrollable-vertical' ref={containerRef}>
                     {displayedWords.map((word: any, index: any) => (
                         <div key={index} className='word-card'>
-                            <IonButton
+                            <IonCard
                                 className='word-button'
-                                expand='block'
-                                style={{ '--background': colorClasses[index % colorClasses.length] }}
+                                // style={{ '--background': colorClasses[index % colorClasses.length] }}
                                 routerLink={`/word-practice/${word.toLocaleLowerCase()}`}
                             >
-                                {word}
-                            </IonButton>
+                                {word.toLocaleLowerCase()}
+                            </IonCard>
                         </div>
                     ))}
                 </div>

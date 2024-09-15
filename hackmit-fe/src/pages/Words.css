@@ -7,21 +7,25 @@
 
 }
 
-
-
 .word-button {
-    --background: var(--ion-color-color8);
+    --background: #EBD7FF;
     width: 100%;
     height: 90px;
     border-radius: 15px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    box-shadow: none;
     font-size: 18px;
+    color: var(--ion-color-color7);
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    font-family: Lora, Georgia, 'Times New Roman', Times, serif;
+    font-size: 2rem;
 }
 
 .word-card {
-
     width: 90%;
-
     transition: transform 0.3s, z-index 0.3s;
 }
 
@@ -30,14 +34,17 @@
     --padding-end: 100px;
 }
 
-ion-searchbar {
+ion-searchbar.searchbar {
     --background: var(--ion-color-color6) !important;
     box-shadow: none !important;
+    --placeholder-color: black !important;
+    padding: 0 1rem;
 }
 
 ion-searchbar input {
     box-shadow: none !important;
     height: 4rem !important;
+    border-radius: 1rem !important;
 }
 
 ion-searchbar ion-icon {
